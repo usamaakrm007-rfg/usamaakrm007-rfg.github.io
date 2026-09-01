@@ -1,2789 +1,1239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UA WordPress — Web Design & Development</title>
+
+<meta name="description" content="Professional WordPress web design and development portfolio. Building modern, fast and conversion-focused websites for businesses and brands.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07070b;
+    color:#f5f5f7;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+:root{
+    --bg:#07070b;
+    --card:#0e0e15;
+    --card2:#11111a;
+    --border:rgba(255,255,255,.10);
+    --text:#f7f7fa;
+    --muted:#8d8d9b;
+    --purple:#8b5cf6;
+    --purple2:#6d3df5;
+    --blue:#39b8ff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:650px;
+    height:650px;
+    top:-250px;
+    left:-180px;
+    background:radial-gradient(
+        circle,
+        rgba(116,68,255,.13),
+        transparent 68%
+    );
+    pointer-events:none;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    right:-220px;
+    bottom:-200px;
+    background:radial-gradient(
+        circle,
+        rgba(32,170,255,.09),
+        transparent 68%
+    );
+    pointer-events:none;
+    z-index:-2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1180px, calc(100% - 40px));
+    height:72px;
+    padding:0 20px 0 24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(10,10,15,.72);
+    border:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border-radius:18px;
+    z-index:1000;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.35);
+}
+
+
+/* LOGO */
 
-    <meta charset="UTF-8">
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-weight:800;
+    letter-spacing:-.5px;
+    font-size:20px;
+}
+
+.logo-box{
+    width:39px;
+    height:39px;
+    border-radius:11px;
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    <title>UA WordPress — Creative Web Developer</title>
+    background:linear-gradient(
+        135deg,
+        #9b6cff,
+        #6739ef
+    );
 
-    <meta name="description"
-          content="Professional WordPress designer and developer creating modern, high-performance websites.">
+    box-shadow:
+        0 0 25px rgba(139,92,246,.35);
 
-    <style>
+    font-size:15px;
+    font-weight:900;
+}
 
-        /* =====================================================
-           GLOBAL
-        ===================================================== */
+.logo span{
+    color:#fff;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.logo small{
+    color:#8e8e9a;
+    font-size:9px;
+    display:block;
+    letter-spacing:1.5px;
+    margin-top:2px;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            background: #08090D;
-            color: #F5F5F7;
-            font-family:
-                Inter,
-                Arial,
-                Helvetica,
-                sans-serif;
-        }
+/* NAVIGATION */
 
-        a {
-            text-decoration: none;
-        }
+.nav{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
 
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
 
-        /* =====================================================
-           COLOR SYSTEM
-        ===================================================== */
+.nav-item{
+    position:relative;
+}
 
-        :root {
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:7px;
 
-            --bg: #08090D;
-            --bg-dark: #050609;
+    padding:11px 15px;
+    border-radius:10px;
 
-            --white: #F5F5F7;
+    color:#a7a7b3;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.4px;
 
-            --gray: #8B8D98;
-            --muted: #5D606B;
+    transition:.3s ease;
+}
 
-            --border: rgba(255,255,255,.09);
+.nav-link:hover{
+    color:#fff;
+    background:rgba(255,255,255,.06);
+}
 
-            --violet: #8B5CF6;
-            --violet-dark: #6D3FE0;
+.nav-link .arrow{
+    font-size:9px;
+    transition:.3s;
+}
 
-            --blue: #38BDF8;
+.nav-item:hover .arrow{
+    transform:rotate(180deg);
+}
 
-        }
 
+/* HOVER POPUP */
 
-        /* =====================================================
-           MAIN HERO
-        ===================================================== */
+.nav-popup{
+    position:absolute;
+    top:49px;
+    left:50%;
+    transform:translateX(-50%) translateY(8px);
 
-        .ua-pro-hero {
+    width:210px;
+    padding:9px;
 
-            --hero-bg: #08090D;
+    background:rgba(17,17,25,.96);
+    border:1px solid rgba(255,255,255,.11);
+    border-radius:15px;
 
-            position: relative;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
 
-            min-height: 100vh;
+    opacity:0;
+    visibility:hidden;
 
-            overflow: hidden;
+    transition:.25s ease;
+}
 
-            background:
-                radial-gradient(
-                    circle at 50% 48%,
-                    #151020 0%,
-                    #08090D 48%,
-                    #050609 100%
-                );
+.nav-item:hover .nav-popup{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
 
-        }
+.popup-item{
+    display:flex;
+    align-items:center;
+    gap:11px;
 
+    padding:11px;
+    border-radius:10px;
 
-        /* =====================================================
-           BACKGROUND GRID
-        ===================================================== */
+    color:#9a9aa6;
+    font-size:11px;
+    font-weight:700;
 
-        .ua-bg-grid {
+    transition:.25s;
+}
 
-            position: absolute;
+.popup-item:hover{
+    background:rgba(139,92,246,.12);
+    color:#fff;
+}
 
-            inset: 0;
+.popup-icon{
+    width:28px;
+    height:28px;
 
-            opacity: .28;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            background-image:
+    border-radius:8px;
 
-                linear-gradient(
-                    rgba(255,255,255,.035) 1px,
-                    transparent 1px
-                ),
+    background:#17151f;
+    color:#9a6cff;
+}
 
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,.035) 1px,
-                    transparent 1px
-                );
 
-            background-size: 70px 70px;
+/* HEADER CTA */
 
-            mask-image:
-                radial-gradient(
-                    ellipse at center,
-                    black 10%,
-                    transparent 80%
-                );
+.header-btn{
+    padding:12px 18px;
+    border-radius:11px;
 
-            pointer-events: none;
+    background:#fff;
+    color:#08080c;
 
-        }
+    font-size:11px;
+    font-weight:800;
 
+    transition:.3s;
+}
 
-        /* =====================================================
-           BACKGROUND GLOWS
-        ===================================================== */
+.header-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(255,255,255,.12);
+}
 
-        .ua-bg-glow {
 
-            position: absolute;
+/* =========================================================
+   HERO
+========================================================= */
 
-            width: 600px;
-            height: 600px;
+.hero{
+    min-height:100vh;
+    padding:
+        150px
+        max(30px, 5vw)
+        80px;
 
-            border-radius: 50%;
+    display:flex;
+    align-items:center;
 
-            filter: blur(120px);
+    position:relative;
+}
 
-            pointer-events: none;
+.hero-grid{
+    width:min(1180px,100%);
+    margin:auto;
 
-        }
+    display:grid;
+    grid-template-columns:
+        .9fr
+        1.1fr;
 
+    gap:70px;
+    align-items:center;
+}
 
-        .ua-glow-one {
 
-            left: 28%;
-            top: 18%;
+/* LEFT */
 
-            background: var(--violet);
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:9px;
 
-            opacity: .13;
+    color:#9b9ba7;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:3px;
 
-            animation:
-                glowMove 8s ease-in-out infinite;
+    margin-bottom:22px;
+}
 
-        }
+.status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#48c7ff;
 
+    box-shadow:
+        0 0 15px #48c7ff;
+}
 
-        .ua-glow-two {
+.hero-title{
+    font-size:
+        clamp(48px, 6vw, 82px);
 
-            right: -200px;
-            bottom: -250px;
+    line-height:.94;
+    letter-spacing:-4px;
+    font-weight:900;
 
-            background: var(--blue);
+    max-width:680px;
+}
 
-            opacity: .09;
+.hero-title .gradient{
+    background:
+        linear-gradient(
+            110deg,
+            #a478ff,
+            #6d5cff 45%,
+            #35baff
+        );
 
-            animation:
-                glowMoveTwo 10s ease-in-out infinite;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
 
-        }
+.hero-description{
+    margin-top:27px;
 
+    max-width:580px;
 
-        @keyframes glowMove {
+    color:#858592;
+    font-size:16px;
+    line-height:1.8;
+}
 
-            0%,
-            100% {
-                transform:
-                    translate(0,0)
-                    scale(1);
-            }
 
-            50% {
-                transform:
-                    translate(50px,-30px)
-                    scale(1.1);
-            }
+/* SKILLS */
 
-        }
+.skill-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
 
+    margin-top:27px;
+}
 
-        @keyframes glowMoveTwo {
+.skill{
+    padding:8px 12px;
 
-            0%,
-            100% {
-                transform:
-                    translate(0,0);
-            }
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:8px;
 
-            50% {
-                transform:
-                    translate(-60px,-50px);
-            }
+    color:#aaaab5;
 
-        }
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
 
+    background:rgba(255,255,255,.025);
+}
 
-        /* =====================================================
-           NOISE
-        ===================================================== */
 
-        .ua-noise {
+/* BUTTONS */
 
-            position: absolute;
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
 
-            inset: 0;
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
 
-            pointer-events: none;
+    padding:15px 21px;
 
-            opacity: .018;
+    border-radius:12px;
 
-            background-image:
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    font-size:11px;
+    font-weight:800;
 
-        }
+    transition:.3s ease;
+}
 
+.btn-primary{
+    background:
+        linear-gradient(
+            135deg,
+            #9565ff,
+            #7041f3
+        );
 
-        /* =====================================================
-           HEADER
-        ===================================================== */
+    box-shadow:
+        0 15px 35px rgba(112,65,243,.22);
+}
 
-        .ua-pro-header {
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 20px 45px rgba(112,65,243,.35);
+}
 
-            position: relative;
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.12);
+    color:#c1c1ca;
+}
 
-            z-index: 999;
+.btn-secondary:hover{
+    background:rgba(255,255,255,.05);
+    color:#fff;
+}
 
-            height: 105px;
 
-            width: 100%;
+/* STATS */
 
-            padding:
-                0 4.5%;
+.stats{
+    display:flex;
+    gap:45px;
+    margin-top:48px;
+}
 
-            display: flex;
+.stat strong{
+    display:block;
+    font-size:27px;
+    font-weight:900;
+}
 
-            align-items: center;
+.stat span{
+    display:block;
+    margin-top:5px;
 
-            justify-content: space-between;
+    color:#666672;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
 
-            border-bottom:
-                1px solid rgba(255,255,255,.07);
 
-            background:
-                rgba(5,6,9,.35);
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
-            backdrop-filter:
-                blur(18px);
+.visual{
+    position:relative;
+    min-height:560px;
 
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
 
-        /* =====================================================
-           LOGO
-        ===================================================== */
+/* ORBIT */
 
-        .ua-pro-logo {
+.orbit{
+    position:absolute;
 
-            display: flex;
+    width:500px;
+    height:500px;
 
-            align-items: center;
+    border:1px solid rgba(139,92,246,.16);
+    border-radius:50%;
+}
 
-            gap: 12px;
+.orbit::before{
+    content:"";
 
-            color: white;
+    position:absolute;
+    inset:65px;
 
-        }
+    border:1px solid rgba(57,184,255,.12);
+    border-radius:50%;
+}
 
+.orbit::after{
+    content:"";
 
-        .ua-logo-box {
+    position:absolute;
 
-            position: relative;
+    width:8px;
+    height:8px;
 
-            width: 43px;
-            height: 43px;
+    top:50px;
+    right:90px;
 
-            display: flex;
+    border-radius:50%;
 
-            align-items: center;
-            justify-content: center;
+    background:#8b5cf6;
 
-            border-radius: 11px;
+    box-shadow:
+        0 0 20px #8b5cf6;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--violet),
-                    var(--blue)
-                );
 
-            color: white;
+/* WEBSITE CARD */
 
-            font-size: 12px;
+.website-card{
+    position:relative;
+    z-index:5;
 
-            font-weight: 950;
+    width:min(570px,100%);
+    height:390px;
 
-            box-shadow:
-                0 10px 35px rgba(139,92,246,.20);
+    background:
+        linear-gradient(
+            145deg,
+            #12121b,
+            #0b0b11
+        );
 
-            overflow: hidden;
+    border:1px solid rgba(255,255,255,.11);
+    border-radius:19px;
 
-        }
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.55),
+        0 0 80px rgba(112,65,243,.10);
 
+    overflow:hidden;
 
-        .ua-logo-box::before {
+    transform:perspective(1000px) rotateY(-4deg);
+    transition:.5s;
+}
 
-            content: "";
+.website-card:hover{
+    transform:
+        perspective(1000px)
+        rotateY(0deg)
+        translateY(-8px);
+}
 
-            position: absolute;
 
-            width: 70px;
-            height: 20px;
+/* BROWSER BAR */
 
-            background:
-                rgba(255,255,255,.25);
+.browser{
+    height:47px;
 
-            transform:
-                rotate(-45deg)
-                translateX(-70px);
+    display:flex;
+    align-items:center;
 
-            animation:
-                logoShine 4s infinite;
+    padding:0 17px;
 
-        }
+    border-bottom:1px solid rgba(255,255,255,.07);
+    background:#101017;
+}
 
+.browser-dots{
+    display:flex;
+    gap:5px;
+}
 
-        @keyframes logoShine {
+.browser-dot{
+    width:7px;
+    height:7px;
 
-            0% {
-                transform:
-                    rotate(-45deg)
-                    translateX(-80px);
-            }
+    border-radius:50%;
+    background:#35353f;
+}
 
-            35%,
-            100% {
-                transform:
-                    rotate(-45deg)
-                    translateX(100px);
-            }
+.browser-url{
+    margin-left:28px;
 
-        }
+    flex:1;
 
+    height:25px;
 
-        .ua-logo-name {
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-            font-size: 19px;
+    border-radius:7px;
 
-            font-weight: 900;
+    background:#181820;
 
-            letter-spacing: -.8px;
+    color:#5f5f6b;
 
-        }
+    font-size:9px;
+}
 
 
-        .ua-logo-name span {
+/* WEBSITE CONTENT */
 
-            color: var(--violet);
+.site-content{
+    padding:35px;
+}
 
-        }
+.mini-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
+.mini-logo{
+    width:33px;
+    height:33px;
 
-        /* =====================================================
-           CENTER NAV
-        ===================================================== */
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        .ua-pro-nav {
+    border-radius:9px;
 
-            position: absolute;
+    background:linear-gradient(
+        135deg,
+        #9565ff,
+        #6038e8
+    );
 
-            left: 50%;
+    font-size:10px;
+    font-weight:900;
+}
 
-            transform:
-                translateX(-50%);
+.mini-links{
+    display:flex;
+    gap:20px;
 
-            display: flex;
+    color:#777783;
+    font-size:8px;
+    font-weight:800;
+}
 
-            align-items: center;
+.site-heading{
+    margin-top:55px;
 
-            gap: 5px;
+    font-size:38px;
+    line-height:1;
 
-            padding: 6px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
 
-            border:
-                1px solid rgba(255,255,255,.10);
+.site-heading span{
+    color:#8d5cff;
+}
 
-            border-radius: 50px;
+.site-line{
+    width:85px;
+    height:3px;
 
-            background:
-                rgba(255,255,255,.025);
+    margin-top:18px;
 
-            backdrop-filter:
-                blur(22px);
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #32b9ff
+        );
+}
 
-            box-shadow:
-                0 15px 50px rgba(0,0,0,.20);
+.site-text{
+    margin-top:17px;
 
-        }
+    color:#686874;
 
+    font-size:10px;
+    line-height:1.7;
 
-        .ua-pro-nav a {
+    max-width:340px;
+}
 
-            position: relative;
 
-            display: flex;
+/* MINI CARDS */
 
-            align-items: center;
+.mini-cards{
+    display:flex;
+    gap:9px;
+    margin-top:27px;
+}
 
-            justify-content: center;
+.mini-card{
+    flex:1;
 
-            padding:
-                12px 17px;
+    padding:13px;
 
-            min-width: 70px;
+    background:#111119;
 
-            border-radius: 40px;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:9px;
+}
 
-            color: #777984;
+.mini-card small{
+    color:#5f5f69;
+    font-size:7px;
+}
 
-            font-size: 9px;
+.mini-card strong{
+    display:block;
+    margin-top:6px;
 
-            font-weight: 850;
+    font-size:9px;
+}
 
-            letter-spacing: .7px;
 
-            transition:
-                .35s ease;
+/* FLOATING BADGES */
 
-        }
+.float-card{
+    position:absolute;
+    z-index:10;
 
+    padding:13px 16px;
 
-        .ua-pro-nav a::before {
+    display:flex;
+    align-items:center;
+    gap:11px;
 
-            content: "";
+    background:rgba(15,15,23,.94);
 
-            position: absolute;
+    border:1px solid rgba(255,255,255,.10);
 
-            inset: 0;
+    border-radius:12px;
 
-            border-radius: inherit;
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(139,92,246,.16),
-                    rgba(56,189,248,.07)
-                );
+    backdrop-filter:blur(15px);
+}
 
-            opacity: 0;
+.float-card strong{
+    font-size:10px;
+}
 
-            transform:
-                scale(.75);
+.float-card small{
+    display:block;
+    margin-top:4px;
 
-            transition:
-                .35s ease;
+    color:#666672;
+    font-size:7px;
+}
 
-            z-index: -1;
+.float-icon{
+    width:35px;
+    height:35px;
 
-        }
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
+    border-radius:9px;
 
-        .ua-pro-nav a:hover {
+    background:rgba(139,92,246,.13);
 
-            color: white;
+    color:#a47cff;
+    font-weight:900;
+}
 
-            transform:
-                translateY(-2px);
+.float-one{
+    top:50px;
+    left:-5px;
+}
 
-        }
+.float-two{
+    bottom:52px;
+    right:-15px;
+}
 
+.float-three{
+    bottom:105px;
+    left:-45px;
+}
 
-        .ua-pro-nav a:hover::before {
 
-            opacity: 1;
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
 
-            transform:
-                scale(1);
+.scroll{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
 
-        }
+    color:#575762;
 
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:2px;
 
-        .ua-pro-nav a.active {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
 
-            color: white;
+.scroll-line{
+    width:35px;
+    height:1px;
+    background:#393942;
+}
 
-            background:
-                rgba(139,92,246,.13);
 
-            box-shadow:
-                inset 0 0 0 1px
-                rgba(139,92,246,.10);
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-        }
+@media(max-width:900px){
 
+    .header{
+        width:calc(100% - 24px);
+    }
 
-        .ua-pro-nav a.active::after {
+    .nav{
+        display:none;
+    }
 
-            content: "";
+    .hero{
+        padding-top:130px;
+    }
 
-            position: absolute;
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
 
-            bottom: 4px;
+    .hero-title{
+        font-size:clamp(48px,12vw,70px);
+    }
 
-            left: 50%;
+    .visual{
+        min-height:470px;
+    }
 
-            width: 4px;
-            height: 4px;
+    .orbit{
+        width:420px;
+        height:420px;
+    }
 
-            transform:
-                translateX(-50%);
+    .website-card{
+        height:340px;
+    }
 
-            border-radius: 50%;
+    .float-one{
+        left:0;
+    }
 
-            background:
-                var(--blue);
+    .float-two{
+        right:0;
+    }
 
-            box-shadow:
-                0 0 10px var(--blue);
+    .float-three{
+        left:0;
+    }
+}
 
-        }
 
+@media(max-width:600px){
 
-        /* =====================================================
-           HEADER CTA
-        ===================================================== */
+    .header{
+        height:62px;
+        padding:0 12px 0 14px;
+        top:10px;
+    }
 
-        .ua-header-cta {
+    .logo{
+        font-size:16px;
+    }
 
-            position: relative;
+    .logo-box{
+        width:34px;
+        height:34px;
+    }
 
-            display: flex;
+    .header-btn{
+        padding:10px 13px;
+        font-size:9px;
+    }
 
-            align-items: center;
+    .hero{
+        padding:
+            105px
+            18px
+            70px;
+    }
 
-            gap: 12px;
+    .hero-title{
+        font-size:48px;
+        letter-spacing:-2.5px;
+    }
 
-            padding:
-                13px 19px;
+    .hero-description{
+        font-size:14px;
+    }
 
-            border:
-                1px solid rgba(255,255,255,.12);
+    .stats{
+        gap:25px;
+    }
 
-            border-radius: 40px;
+    .stat strong{
+        font-size:22px;
+    }
 
-            color: white;
+    .visual{
+        min-height:400px;
+    }
 
-            font-size: 9px;
+    .orbit{
+        width:330px;
+        height:330px;
+    }
 
-            font-weight: 850;
+    .website-card{
+        height:285px;
+        border-radius:14px;
+    }
 
-            letter-spacing: .4px;
+    .site-content{
+        padding:22px;
+    }
 
-            overflow: hidden;
+    .site-heading{
+        margin-top:35px;
+        font-size:27px;
+    }
 
-            transition:
-                .35s ease;
+    .site-text{
+        max-width:260px;
+    }
 
-        }
+    .mini-cards{
+        display:none;
+    }
 
+    .float-card{
+        padding:10px 12px;
+    }
 
-        .ua-header-cta::before {
+    .float-three{
+        bottom:30px;
+    }
 
-            content: "";
+    .float-one{
+        top:15px;
+    }
 
-            position: absolute;
+    .float-two{
+        bottom:15px;
+    }
 
-            inset: 0;
+    .scroll{
+        display:none;
+    }
+}
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(139,92,246,.18),
-                    transparent
-                );
-
-            transform:
-                translateX(-100%);
-
-            transition:
-                .5s ease;
-
-        }
-
-
-        .ua-header-cta:hover::before {
-
-            transform:
-                translateX(100%);
-
-        }
-
-
-        .ua-header-cta:hover {
-
-            border-color:
-                rgba(139,92,246,.55);
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 12px 35px
-                rgba(139,92,246,.12);
-
-        }
-
-
-        .ua-header-cta span {
-
-            color: var(--blue);
-
-            font-size: 15px;
-
-        }
-
-
-        /* =====================================================
-           MOBILE MENU BUTTON
-        ===================================================== */
-
-        .ua-mobile-menu {
-
-            display: none;
-
-            width: 43px;
-            height: 43px;
-
-            align-items: center;
-            justify-content: center;
-
-            border:
-                1px solid rgba(255,255,255,.12);
-
-            border-radius: 50%;
-
-            background:
-                rgba(255,255,255,.025);
-
-            color: white;
-
-            cursor: pointer;
-
-        }
-
-
-        .ua-mobile-menu span {
-
-            position: relative;
-
-            width: 16px;
-
-            height: 1px;
-
-            background: white;
-
-        }
-
-
-        .ua-mobile-menu span::before,
-        .ua-mobile-menu span::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            width: 16px;
-
-            height: 1px;
-
-            background: white;
-
-        }
-
-
-        .ua-mobile-menu span::before {
-
-            top: -5px;
-
-        }
-
-
-        .ua-mobile-menu span::after {
-
-            top: 5px;
-
-        }
-
-
-        /* =====================================================
-           HERO CONTENT
-        ===================================================== */
-
-        .ua-pro-hero-inner {
-
-            position: relative;
-
-            z-index: 10;
-
-            width: 91%;
-
-            max-width: 1550px;
-
-            min-height:
-                calc(100vh - 160px);
-
-            margin:
-                0 auto;
-
-            display: grid;
-
-            grid-template-columns:
-                31%
-                44%
-                25%;
-
-            align-items: center;
-
-        }
-
-
-        /* =====================================================
-           LEFT CONTENT
-        ===================================================== */
-
-        .ua-pro-left {
-
-            position: relative;
-
-            z-index: 20;
-
-        }
-
-
-        .ua-status {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 9px;
-
-            margin-bottom: 28px;
-
-            color: #777984;
-
-            font-size: 9px;
-
-            font-weight: 850;
-
-            letter-spacing: 1.4px;
-
-        }
-
-
-        .ua-status-dot {
-
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background:
-                var(--blue);
-
-            box-shadow:
-                0 0 15px
-                var(--blue);
-
-            animation:
-                statusPulse 2s infinite;
-
-        }
-
-
-        @keyframes statusPulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: .45;
-                transform: scale(.75);
-            }
-
-        }
-
-
-        .ua-small-heading {
-
-            margin-bottom: 18px;
-
-            color: #676A75;
-
-            font-size: 10px;
-
-            font-weight: 850;
-
-            letter-spacing: 3px;
-
-        }
-
-
-        .ua-main-heading {
-
-            margin: 0;
-
-            max-width: 560px;
-
-            color: var(--white);
-
-            font-size:
-                clamp(55px, 5.6vw, 92px);
-
-            line-height: .88;
-
-            letter-spacing: -5px;
-
-            font-weight: 950;
-
-        }
-
-
-        .ua-main-heading span {
-
-            display: block;
-
-            background:
-                linear-gradient(
-                    100deg,
-                    var(--violet),
-                    var(--blue)
-                );
-
-            -webkit-background-clip:
-                text;
-
-            background-clip:
-                text;
-
-            color:
-                transparent;
-
-        }
-
-
-        .ua-main-description {
-
-            max-width: 430px;
-
-            margin:
-                30px 0 0;
-
-            color: #858792;
-
-            font-size: 13px;
-
-            line-height: 1.85;
-
-        }
-
-
-        /* =====================================================
-           BUTTONS
-        ===================================================== */
-
-        .ua-hero-buttons {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            margin-top: 35px;
-
-        }
-
-
-        .ua-primary-btn,
-        .ua-secondary-btn {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 18px;
-
-            min-height: 53px;
-
-            padding:
-                0 20px;
-
-            border-radius: 35px;
-
-            font-size: 9px;
-
-            font-weight: 850;
-
-            transition:
-                .35s ease;
-
-        }
-
-
-        .ua-primary-btn {
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    100deg,
-                    var(--violet),
-                    var(--violet-dark)
-                );
-
-            box-shadow:
-                0 15px 35px
-                rgba(139,92,246,.18);
-
-        }
-
-
-        .ua-primary-btn span {
-
-            font-size: 16px;
-
-        }
-
-
-        .ua-primary-btn:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 22px 45px
-                rgba(139,92,246,.30);
-
-        }
-
-
-        .ua-secondary-btn {
-
-            color: #898B96;
-
-            border:
-                1px solid
-                rgba(255,255,255,.11);
-
-        }
-
-
-        .ua-secondary-btn span {
-
-            color:
-                var(--blue);
-
-            font-size: 16px;
-
-        }
-
-
-        .ua-secondary-btn:hover {
-
-            color: white;
-
-            border-color:
-                var(--blue);
-
-            transform:
-                translateY(-3px);
-
-        }
-
-
-        /* =====================================================
-           MINI STATS
-        ===================================================== */
-
-        .ua-mini-stats {
-
-            display: flex;
-
-            gap: 38px;
-
-            margin-top: 55px;
-
-        }
-
-
-        .ua-mini-stats div {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 7px;
-
-        }
-
-
-        .ua-mini-stats strong {
-
-            color: white;
-
-            font-size: 21px;
-
-            letter-spacing: -1px;
-
-        }
-
-
-        .ua-mini-stats span {
-
-            color: #555863;
-
-            font-size: 8px;
-
-            font-weight: 850;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        /* =====================================================
-           DIGITAL STAGE
-        ===================================================== */
-
-        .ua-digital-stage {
-
-            position: relative;
-
-            height: 650px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-        }
-
-
-        /* =====================================================
-           ORBITS
-        ===================================================== */
-
-        .ua-orbit {
-
-            position: absolute;
-
-            border:
-                1px solid
-                rgba(139,92,246,.15);
-
-            border-radius: 50%;
-
-            pointer-events: none;
-
-        }
-
-
-        .ua-orbit-one {
-
-            width: 560px;
-            height: 560px;
-
-            animation:
-                uaRotate 22s linear infinite;
-
-        }
-
-
-        .ua-orbit-two {
-
-            width: 440px;
-            height: 440px;
-
-            border-color:
-                rgba(56,189,248,.13);
-
-            animation:
-                uaRotateReverse 17s linear infinite;
-
-        }
-
-
-        @keyframes uaRotate {
-
-            from {
-                transform:
-                    rotate(0deg);
-            }
-
-            to {
-                transform:
-                    rotate(360deg);
-            }
-
-        }
-
-
-        @keyframes uaRotateReverse {
-
-            from {
-                transform:
-                    rotate(360deg);
-            }
-
-            to {
-                transform:
-                    rotate(0deg);
-            }
-
-        }
-
-
-        /* =====================================================
-           BROWSER
-        ===================================================== */
-
-        .ua-browser {
-
-            position: relative;
-
-            z-index: 10;
-
-            width: 470px;
-
-            height: 330px;
-
-            overflow: hidden;
-
-            border:
-                1px solid
-                rgba(255,255,255,.15);
-
-            border-radius: 16px;
-
-            background:
-                rgba(13,15,22,.82);
-
-            box-shadow:
-
-                0 45px 100px
-                rgba(0,0,0,.65),
-
-                0 0 80px
-                rgba(139,92,246,.10);
-
-            backdrop-filter:
-                blur(25px);
-
-            transform:
-                perspective(1000px)
-                rotateY(-4deg)
-                rotateX(2deg);
-
-            transition:
-                .5s ease;
-
-        }
-
-
-        .ua-browser:hover {
-
-            transform:
-                perspective(1000px)
-                rotateY(0deg)
-                rotateX(0deg)
-                translateY(-8px);
-
-            box-shadow:
-
-                0 55px 110px
-                rgba(0,0,0,.7),
-
-                0 0 90px
-                rgba(139,92,246,.15);
-
-        }
-
-
-        /* =====================================================
-           BROWSER TOP
-        ===================================================== */
-
-        .ua-browser-top {
-
-            height: 42px;
-
-            padding:
-                0 15px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,.07);
-
-        }
-
-
-        .ua-browser-dots {
-
-            display: flex;
-
-            gap: 5px;
-
-        }
-
-
-        .ua-browser-dots i {
-
-            width: 6px;
-            height: 6px;
-
-            border-radius: 50%;
-
-            background:
-                #3C3E47;
-
-        }
-
-
-        .ua-browser-url {
-
-            flex: 1;
-
-            padding:
-                7px 15px;
-
-            border-radius: 20px;
-
-            background:
-                rgba(255,255,255,.035);
-
-            color:
-                #555862;
-
-            text-align: center;
-
-            font-size: 8px;
-
-        }
-
-
-        .ua-browser-icon {
-
-            color:
-                #555862;
-
-        }
-
-
-        /* =====================================================
-           BROWSER CONTENT
-        ===================================================== */
-
-        .ua-browser-content {
-
-            position: relative;
-
-            height:
-                calc(100% - 42px);
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0D0F16,
-                    #11101A
-                );
-
-        }
-
-
-        .ua-browser-nav {
-
-            height: 48px;
-
-            padding:
-                0 18px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 17px;
-
-            color:
-                #555862;
-
-            font-size: 7px;
-
-            font-weight: 850;
-
-        }
-
-
-        .ua-mini-logo {
-
-            width: 25px;
-            height: 25px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 6px;
-
-            background:
-                var(--violet);
-
-            color: white;
-
-            font-size: 7px;
-
-            font-weight: 900;
-
-        }
-
-
-        .ua-browser-main {
-
-            padding:
-                24px 32px;
-
-        }
-
-
-        .browser-tag {
-
-            color:
-                var(--blue);
-
-            font-size: 7px;
-
-            font-weight: 850;
-
-            letter-spacing: 2px;
-
-        }
-
-
-        .ua-browser-main h3 {
-
-            margin:
-                12px 0 8px;
-
-            font-size: 43px;
-
-            line-height: .85;
-
-            letter-spacing: -3px;
-
-            color: white;
-
-        }
-
-
-        .ua-browser-main h3 span {
-
-            color:
-                var(--violet);
-
-        }
-
-
-        .ua-browser-main p {
-
-            margin: 0;
-
-            color:
-                #555862;
-
-            font-size: 9px;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        .browser-line {
-
-            width: 70px;
-
-            height: 2px;
-
-            margin-top: 25px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--violet),
-                    var(--blue)
-                );
-
-        }
-
-
-        .browser-cards {
-
-            display: flex;
-
-            gap: 8px;
-
-            margin-top: 18px;
-
-        }
-
-
-        .browser-cards div {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 5px;
-
-            width: 92px;
-
-            padding: 10px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.07);
-
-            border-radius: 6px;
-
-            background:
-                rgba(255,255,255,.025);
-
-            transition:
-                .3s ease;
-
-        }
-
-
-        .browser-cards div:hover {
-
-            border-color:
-                rgba(139,92,246,.35);
-
-            transform:
-                translateY(-3px);
-
-        }
-
-
-        .browser-cards span {
-
-            color:
-                #484A54;
-
-            font-size: 7px;
-
-        }
-
-
-        .browser-cards b {
-
-            color:
-                #999BA4;
-
-            font-size: 7px;
-
-        }
-
-
-        /* =====================================================
-           FAKE CURSOR
-        ===================================================== */
-
-        .ua-fake-cursor {
-
-            position: absolute;
-
-            right: 95px;
-
-            top: 125px;
-
-            width: 18px;
-            height: 18px;
-
-            transform:
-                rotate(-25deg);
-
-            animation:
-                uaCursorMove 4s
-                ease-in-out infinite;
-
-        }
-
-
-        .ua-fake-cursor::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 0;
-            height: 0;
-
-            border-left:
-                8px solid white;
-
-            border-top:
-                14px solid transparent;
-
-            filter:
-                drop-shadow(
-                    0 2px 3px black
-                );
-
-        }
-
-
-        .ua-fake-cursor span {
-
-            position: absolute;
-
-            width: 7px;
-            height: 7px;
-
-            top: -3px;
-            left: 8px;
-
-            border-radius: 50%;
-
-            background:
-                var(--blue);
-
-        }
-
-
-        @keyframes uaCursorMove {
-
-            0%,
-            100% {
-                transform:
-                    translate(0,0)
-                    rotate(-25deg);
-            }
-
-            50% {
-                transform:
-                    translate(-35px,25px)
-                    rotate(-25deg);
-            }
-
-        }
-
-
-        /* =====================================================
-           FLOATING CODE CARD
-        ===================================================== */
-
-        .ua-floating-code {
-
-            position: absolute;
-
-            z-index: 20;
-
-            top: 75px;
-
-            left: 30px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            padding:
-                11px 14px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.1);
-
-            border-radius: 10px;
-
-            background:
-                rgba(13,15,22,.8);
-
-            backdrop-filter:
-                blur(15px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(0,0,0,.3);
-
-            animation:
-                uaFloat 5s
-                ease-in-out infinite;
-
-        }
-
-
-        .ua-floating-code .code-symbol {
-
-            color:
-                var(--blue);
-
-            font-size: 15px;
-
-            font-weight: 900;
-
-        }
-
-
-        .ua-floating-code div {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 3px;
-
-        }
-
-
-        .ua-floating-code small {
-
-            color:
-                #555862;
-
-            font-size: 6px;
-
-        }
-
-
-        .ua-floating-code strong {
-
-            color:
-                #B5B6BD;
-
-            font-size: 8px;
-
-        }
-
-
-        @keyframes uaFloat {
-
-            0%,
-            100% {
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-                transform:
-                    translateY(-12px);
-            }
-
-        }
-
-
-        /* =====================================================
-           WORDPRESS BADGE
-        ===================================================== */
-
-        .ua-wp-badge {
-
-            position: absolute;
-
-            z-index: 20;
-
-            right: 12px;
-
-            bottom: 120px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            padding:
-                10px 13px;
-
-            border:
-                1px solid
-                rgba(56,189,248,.14);
-
-            border-radius: 11px;
-
-            background:
-                rgba(10,12,18,.85);
-
-            backdrop-filter:
-                blur(15px);
-
-            animation:
-                uaFloat 6s
-                ease-in-out infinite;
-
-        }
-
-
-        .ua-wp-symbol {
-
-            width: 32px;
-            height: 32px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border:
-                2px solid
-                var(--blue);
-
-            border-radius: 50%;
-
-            color:
-                var(--blue);
-
-            font-size: 12px;
-
-            font-weight: 900;
-
-        }
-
-
-        .ua-wp-badge div:last-child {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 3px;
-
-        }
-
-
-        .ua-wp-badge small {
-
-            color:
-                #4F525D;
-
-            font-size: 6px;
-
-        }
-
-
-        .ua-wp-badge strong {
-
-            color:
-                #A5A7AF;
-
-            font-size: 8px;
-
-        }
-
-
-        /* =====================================================
-           PERFORMANCE CARD
-        ===================================================== */
-
-        .ua-performance {
-
-            position: absolute;
-
-            z-index: 20;
-
-            left: 35px;
-
-            bottom: 90px;
-
-            width: 125px;
-
-            padding: 12px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-
-            border-radius: 10px;
-
-            background:
-                rgba(10,12,18,.85);
-
-            backdrop-filter:
-                blur(15px);
-
-        }
-
-
-        .performance-top {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-        .performance-top span {
-
-            color:
-                #5D606B;
-
-            font-size: 6px;
-
-            font-weight: 850;
-
-        }
-
-
-        .performance-top b {
-
-            color:
-                var(--blue);
-
-            font-size: 14px;
-
-        }
-
-
-        .performance-bar {
-
-            height: 3px;
-
-            margin:
-                10px 0 8px;
-
-            overflow: hidden;
-
-            border-radius: 10px;
-
-            background:
-                #20222A;
-
-        }
-
-
-        .performance-bar span {
-
-            display: block;
-
-            width: 98%;
-
-            height: 100%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--violet),
-                    var(--blue)
-                );
-
-            animation:
-                uaPerformance 3s
-                ease infinite;
-
-        }
-
-
-        @keyframes uaPerformance {
-
-            0% {
-                width: 85%;
-            }
-
-            50% {
-                width: 98%;
-            }
-
-            100% {
-                width: 92%;
-            }
-
-        }
-
-
-        .ua-performance small {
-
-            color:
-                #454852;
-
-            font-size: 5px;
-
-        }
-
-
-        /* =====================================================
-           ROTATING SYMBOL
-        ===================================================== */
-
-        .ua-rotate-symbol {
-
-            position: absolute;
-
-            right: 30px;
-
-            top: 90px;
-
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border:
-                1px solid
-                rgba(139,92,246,.22);
-
-            border-radius: 50%;
-
-            animation:
-                uaRotate 8s
-                linear infinite;
-
-        }
-
-
-        .ua-rotate-symbol span {
-
-            color:
-                var(--violet);
-
-            font-size: 17px;
-
-        }
-
-
-        /* =====================================================
-           RIGHT SIDE
-        ===================================================== */
-
-        .ua-pro-right {
-
-            height: 100%;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            padding-left: 35px;
-
-        }
-
-
-        .ua-right-label {
-
-            margin-bottom: 25px;
-
-            color:
-                #50535D;
-
-            font-size: 8px;
-
-            font-weight: 850;
-
-            letter-spacing: 2px;
-
-        }
-
-
-        .ua-capability-list {
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.08);
-
-        }
-
-
-        .ua-capability-list a {
-
-            display: grid;
-
-            grid-template-columns:
-                35px 1fr 20px;
-
-            align-items: center;
-
-            min-height: 62px;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,.08);
-
-            color:
-                #70727D;
-
-            transition:
-                .35s ease;
-
-        }
-
-
-        .ua-capability-list span {
-
-            color:
-                #444650;
-
-            font-size: 8px;
-
-        }
-
-
-        .ua-capability-list strong {
-
-            font-size: 10px;
-
-            letter-spacing: .5px;
-
-        }
-
-
-        .ua-capability-list b {
-
-            color:
-                #444650;
-
-            font-size: 14px;
-
-            transition:
-                .35s ease;
-
-        }
-
-
-        .ua-capability-list a:hover {
-
-            padding-left: 12px;
-
-            color: white;
-
-        }
-
-
-        .ua-capability-list a:hover b {
-
-            color:
-                var(--violet);
-
-            transform:
-                translateX(3px);
-
-        }
-
-
-        /* =====================================================
-           SCROLL INDICATOR
-        ===================================================== */
-
-        .ua-scroll-indicator {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            margin-top: 80px;
-
-        }
-
-
-        .ua-scroll-indicator span {
-
-            color:
-                #474A54;
-
-            font-size: 7px;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        .ua-scroll-indicator div {
-
-            width: 40px;
-
-            height: 1px;
-
-            background:
-                #30323A;
-
-        }
-
-
-        .ua-scroll-indicator b {
-
-            color:
-                var(--blue);
-
-            animation:
-                scrollArrow 1.8s
-                infinite;
-
-        }
-
-
-        @keyframes scrollArrow {
-
-            0%,
-            100% {
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-                transform:
-                    translateY(5px);
-            }
-
-        }
-
-
-        /* =====================================================
-           MARQUEE
-        ===================================================== */
-
-        .ua-marquee {
-
-            position: absolute;
-
-            z-index: 50;
-
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            height: 55px;
-
-            overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.06);
-
-            background:
-                rgba(5,6,9,.65);
-
-            backdrop-filter:
-                blur(10px);
-
-        }
-
-
-        .ua-marquee-track {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 35px;
-
-            white-space: nowrap;
-
-            animation:
-                uaMarquee 22s
-                linear infinite;
-
-        }
-
-
-        .ua-marquee span {
-
-            color:
-                #50525D;
-
-            font-size: 9px;
-
-            font-weight: 900;
-
-            letter-spacing: 2px;
-
-        }
-
-
-        .ua-marquee i {
-
-            color:
-                var(--blue);
-
-            font-size: 8px;
-
-            font-style: normal;
-
-        }
-
-
-        @keyframes uaMarquee {
-
-            from {
-                transform:
-                    translateX(0);
-            }
-
-            to {
-                transform:
-                    translateX(-35%);
-            }
-
-        }
-
-
-        /* =====================================================
-           MOBILE NAV
-        ===================================================== */
-
-        .ua-mobile-nav {
-
-            position: fixed;
-
-            z-index: 998;
-
-            top: 82px;
-
-            left: 15px;
-            right: 15px;
-
-            padding: 12px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.10);
-
-            border-radius: 18px;
-
-            background:
-                rgba(10,11,16,.95);
-
-            backdrop-filter:
-                blur(25px);
-
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,.5);
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transform:
-                translateY(-15px);
-
-            transition:
-                .35s ease;
-
-        }
-
-
-        .ua-mobile-nav.open {
-
-            opacity: 1;
-
-            visibility: visible;
-
-            transform:
-                translateY(0);
-
-        }
-
-
-        .ua-mobile-nav a {
-
-            display: block;
-
-            padding:
-                14px 16px;
-
-            border-radius: 10px;
-
-            color:
-                #858792;
-
-            font-size: 11px;
-
-            font-weight: 800;
-
-            transition:
-                .25s ease;
-
-        }
-
-
-        .ua-mobile-nav a:hover {
-
-            color: white;
-
-            background:
-                rgba(139,92,246,.12);
-
-        }
-
-
-        /* =====================================================
-           TABLET
-        ===================================================== */
-
-        @media (max-width: 1150px) {
-
-            .ua-pro-nav a {
-
-                min-width: auto;
-
-                padding:
-                    11px 12px;
-
-            }
-
-
-            .ua-pro-hero-inner {
-
-                grid-template-columns:
-                    42%
-                    58%;
-
-            }
-
-
-            .ua-pro-right {
-
-                display: none;
-
-            }
-
-
-            .ua-browser {
-
-                width: 430px;
-
-            }
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 760px) {
-
-            .ua-pro-header {
-
-                height: 82px;
-
-                padding:
-                    0 20px;
-
-            }
-
-
-            .ua-pro-nav {
-
-                display: none;
-
-            }
-
-
-            .ua-header-cta {
-
-                display: none;
-
-            }
-
-
-            .ua-mobile-menu {
-
-                display: flex;
-
-            }
-
-
-            .ua-pro-hero-inner {
-
-                width: 90%;
-
-                min-height: auto;
-
-                padding:
-                    70px 0 80px;
-
-                display: flex;
-
-                flex-direction: column;
-
-            }
-
-
-            .ua-pro-left {
-
-                text-align: center;
-
-            }
-
-
-            .ua-status {
-
-                justify-content: center;
-
-            }
-
-
-            .ua-main-heading {
-
-                font-size:
-                    clamp(48px, 14vw, 75px);
-
-                letter-spacing:
-                    -3px;
-
-            }
-
-
-            .ua-main-description {
-
-                margin-left: auto;
-
-                margin-right: auto;
-
-            }
-
-
-            .ua-hero-buttons {
-
-                justify-content: center;
-
-                flex-wrap: wrap;
-
-            }
-
-
-            .ua-mini-stats {
-
-                justify-content: center;
-
-                gap: 25px;
-
-            }
-
-
-            .ua-digital-stage {
-
-                width: 100%;
-
-                height: 540px;
-
-                margin-top: 15px;
-
-                transform:
-                    scale(.82);
-
-            }
-
-
-            .ua-browser {
-
-                width: 450px;
-
-            }
-
-
-            .ua-orbit-one {
-
-                width: 500px;
-                height: 500px;
-
-            }
-
-
-            .ua-orbit-two {
-
-                width: 390px;
-                height: 390px;
-
-            }
-
-
-            .ua-marquee {
-
-                height: 45px;
-
-            }
-
-        }
-
-
-        /* =====================================================
-           SMALL MOBILE
-        ===================================================== */
-
-        @media (max-width: 480px) {
-
-            .ua-logo-name {
-
-                font-size: 16px;
-
-            }
-
-
-            .ua-logo-box {
-
-                width: 37px;
-                height: 37px;
-
-            }
-
-
-            .ua-main-heading {
-
-                font-size: 48px;
-
-            }
-
-
-            .ua-digital-stage {
-
-                height: 430px;
-
-                transform:
-                    scale(.67);
-
-                margin-top:
-                    -15px;
-
-                margin-bottom:
-                    -40px;
-
-            }
-
-
-            .ua-mini-stats {
-
-                gap: 18px;
-
-            }
-
-
-            .ua-mini-stats strong {
-
-                font-size: 17px;
-
-            }
-
-
-            .ua-marquee-track {
-
-                gap: 25px;
-
-            }
-
-        }
-
-    </style>
-
+</style>
 </head>
 
 
 <body>
 
 
-<!-- =========================================================
-     HERO START
-========================================================= -->
+<!-- ======================================================
+     HEADER
+======================================================= -->
 
-<section class="ua-pro-hero" id="home">
+<header class="header">
 
+    <!-- LOGO -->
+    <a href="#home" class="logo">
 
-    <!-- BACKGROUND -->
+        <div class="logo-box">
+            UA
+        </div>
 
-    <div class="ua-bg-grid"></div>
+        <div>
+            UA
+            <small>WORDPRESS</small>
+        </div>
 
-    <div class="ua-bg-glow ua-glow-one"></div>
-
-    <div class="ua-bg-glow ua-glow-two"></div>
-
-    <div class="ua-noise"></div>
-
-
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
-
-    <header class="ua-pro-header">
+    </a>
 
 
-        <!-- LOGO -->
+    <!-- NAVIGATION -->
 
-        <a href="#home"
-           class="ua-pro-logo">
+    <nav class="nav">
 
-            <span class="ua-logo-box">
-                UA
-            </span>
-
-            <span class="ua-logo-name">
-                WORDPRESS
-            </span>
-
-        </a>
-
-
-        <!-- CENTER NAV -->
-
-        <nav class="ua-pro-nav">
-
-            <a href="#home"
-               class="active">
+        <!-- HOME -->
+        <div class="nav-item">
+            <a href="#home" class="nav-link">
                 HOME
             </a>
+        </div>
 
-            <a href="#about">
+
+        <!-- ABOUT -->
+        <div class="nav-item">
+
+            <a href="#about" class="nav-link">
                 ABOUT
             </a>
 
-            <a href="#portfolio">
-                PORTFOLIO
+            <div class="nav-popup">
+
+                <a href="#about" class="popup-item">
+                    <span class="popup-icon">01</span>
+                    About Me
+                </a>
+
+                <a href="#about" class="popup-item">
+                    <span class="popup-icon">02</span>
+                    My Approach
+                </a>
+
+                <a href="#about" class="popup-item">
+                    <span class="popup-icon">03</span>
+                    Experience
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- WORK -->
+        <div class="nav-item">
+
+            <a href="#work" class="nav-link">
+                WORK
+                <span class="arrow">⌄</span>
             </a>
 
-            <a href="#services">
+            <div class="nav-popup">
+
+                <a href="#work" class="popup-item">
+                    <span class="popup-icon">01</span>
+                    WordPress
+                </a>
+
+                <a href="#work" class="popup-item">
+                    <span class="popup-icon">02</span>
+                    Web Design
+                </a>
+
+                <a href="#work" class="popup-item">
+                    <span class="popup-icon">03</span>
+                    Landing Pages
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+        <div class="nav-item">
+
+            <a href="#services" class="nav-link">
                 SERVICES
+                <span class="arrow">⌄</span>
             </a>
 
-            <a href="#contact">
+            <div class="nav-popup">
+
+                <a href="#services" class="popup-item">
+                    <span class="popup-icon">01</span>
+                    WordPress Development
+                </a>
+
+                <a href="#services" class="popup-item">
+                    <span class="popup-icon">02</span>
+                    UI / UX Design
+                </a>
+
+                <a href="#services" class="popup-item">
+                    <span class="popup-icon">03</span>
+                    SEO & Speed
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+        <div class="nav-item">
+
+            <a href="#contact" class="nav-link">
                 CONTACT
             </a>
 
-        </nav>
-
-
-        <!-- HEADER CTA -->
-
-        <a href="#contact"
-           class="ua-header-cta">
-
-            LET'S WORK
-
-            <span>↗</span>
-
-        </a>
-
-
-        <!-- MOBILE BUTTON -->
-
-        <button class="ua-mobile-menu"
-                id="uaMobileButton"
-                aria-label="Open menu">
-
-            <span></span>
-
-        </button>
-
-
-    </header>
-
-
-    <!-- =====================================================
-         MOBILE NAV
-    ===================================================== -->
-
-    <nav class="ua-mobile-nav"
-         id="uaMobileNav">
-
-        <a href="#home">
-            HOME
-        </a>
-
-        <a href="#about">
-            ABOUT
-        </a>
-
-        <a href="#portfolio">
-            PORTFOLIO
-        </a>
-
-        <a href="#services">
-            SERVICES
-        </a>
-
-        <a href="#contact">
-            CONTACT
-        </a>
+        </div>
 
     </nav>
 
 
-    <!-- =====================================================
-         HERO CONTENT
-    ===================================================== -->
+    <!-- HEADER BUTTON -->
 
-    <div class="ua-pro-hero-inner">
+    <a href="#contact" class="header-btn">
+        LET'S TALK ↗
+    </a>
 
-
-        <!-- =================================================
-             LEFT
-        ================================================= -->
-
-        <div class="ua-pro-left">
+</header>
 
 
-            <div class="ua-status">
 
-                <span class="ua-status-dot"></span>
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="hero-grid">
+
+
+        <!-- ==================================================
+             HERO LEFT
+        =================================================== -->
+
+        <div class="hero-left">
+
+            <div class="eyebrow">
+
+                <span class="status-dot"></span>
 
                 AVAILABLE FOR PROJECTS
 
             </div>
 
 
-            <p class="ua-small-heading">
-                WORDPRESS DESIGN & DEVELOPMENT
-            </p>
+            <h1 class="hero-title">
 
+                WORDPRESS
+                <br>
 
-            <h1 class="ua-main-heading">
-
-                BUILDING
-
-                <span>
-                    DIGITAL
+                <span class="gradient">
+                    DESIGNER
                 </span>
 
-                EXPERIENCES.
+                &
+                <br>
+
+                DEVELOPER
 
             </h1>
 
 
-            <p class="ua-main-description">
+            <p class="hero-description">
 
-                I create modern WordPress websites that
-                combine strategic design, clean development
-                and powerful digital experiences.
+                I build modern, fast and conversion-focused
+                WordPress websites that help businesses establish
+                a strong digital presence and turn visitors into
+                customers.
 
             </p>
 
 
+            <!-- SKILLS -->
+
+            <div class="skill-row">
+
+                <div class="skill">
+                    WORDPRESS
+                </div>
+
+                <div class="skill">
+                    WEB DESIGN
+                </div>
+
+                <div class="skill">
+                    DEVELOPMENT
+                </div>
+
+                <div class="skill">
+                    SEO
+                </div>
+
+                <div class="skill">
+                    PERFORMANCE
+                </div>
+
+            </div>
+
+
             <!-- BUTTONS -->
 
-            <div class="ua-hero-buttons">
+            <div class="hero-buttons">
 
-
-                <a href="#portfolio"
-                   class="ua-primary-btn">
+                <a href="#work" class="btn btn-primary">
 
                     VIEW MY WORK
 
@@ -2792,29 +1242,24 @@
                 </a>
 
 
-                <a href="#contact"
-                   class="ua-secondary-btn">
+                <a href="#contact" class="btn btn-secondary">
 
                     START A PROJECT
 
-                    <span>+</span>
+                    <span>＋</span>
 
                 </a>
-
 
             </div>
 
 
             <!-- STATS -->
 
-            <div class="ua-mini-stats">
+            <div class="stats">
 
+                <div class="stat">
 
-                <div>
-
-                    <strong>
-                        50+
-                    </strong>
+                    <strong>50+</strong>
 
                     <span>
                         PROJECTS
@@ -2823,535 +1268,391 @@
                 </div>
 
 
-                <div>
+                <div class="stat">
 
-                    <strong>
-                        04+
-                    </strong>
+                    <strong>04+</strong>
 
                     <span>
-                        YEARS EXP.
+                        YEARS EXPERIENCE
                     </span>
 
                 </div>
 
 
-                <div>
+                <div class="stat">
 
-                    <strong>
-                        100%
-                    </strong>
+                    <strong>100%</strong>
 
                     <span>
-                        DEDICATION
+                        COMMITMENT
                     </span>
 
                 </div>
-
 
             </div>
-
 
         </div>
 
 
-        <!-- =================================================
-             CENTER DIGITAL EXPERIENCE
-        ================================================= -->
 
-        <div class="ua-digital-stage">
+        <!-- ==================================================
+             HERO RIGHT VISUAL
+        =================================================== -->
 
+        <div class="visual">
 
-            <!-- ORBITS -->
-
-            <div class="ua-orbit ua-orbit-one"></div>
-
-            <div class="ua-orbit ua-orbit-two"></div>
+            <div class="orbit"></div>
 
 
-            <!-- FLOATING CODE -->
+            <!-- WEBSITE MOCKUP -->
 
-            <div class="ua-floating-code">
-
-                <span class="code-symbol">
-                    &lt;/&gt;
-                </span>
-
-                <div>
-
-                    <small>
-                        CODE
-                    </small>
-
-                    <strong>
-                        WORDPRESS
-                    </strong>
-
-                </div>
-
-            </div>
+            <div class="website-card">
 
 
-            <!-- =================================================
-                 BROWSER
-            ================================================= -->
+                <!-- BROWSER -->
 
-            <div class="ua-browser">
+                <div class="browser">
 
+                    <div class="browser-dots">
 
-                <!-- BROWSER TOP -->
-
-                <div class="ua-browser-top">
-
-
-                    <div class="ua-browser-dots">
-
-                        <i></i>
-                        <i></i>
-                        <i></i>
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
+                        <span class="browser-dot"></span>
 
                     </div>
 
 
-                    <div class="ua-browser-url">
-
-                        yourportfolio.dev
-
+                    <div class="browser-url">
+                        yourbusiness.com
                     </div>
-
-
-                    <span class="ua-browser-icon">
-                        ⋮
-                    </span>
-
 
                 </div>
 
 
-                <!-- BROWSER CONTENT -->
 
-                <div class="ua-browser-content">
+                <!-- WEBSITE -->
+
+                <div class="site-content">
 
 
-                    <!-- MINI NAV -->
+                    <div class="mini-nav">
 
-                    <div class="ua-browser-nav">
-
-                        <span class="ua-mini-logo">
+                        <div class="mini-logo">
                             UA
-                        </span>
+                        </div>
 
-                        <span>
-                            WORK
-                        </span>
 
-                        <span>
-                            ABOUT
-                        </span>
+                        <div class="mini-links">
 
-                        <span>
-                            CONTACT
-                        </span>
+                            <span>HOME</span>
+                            <span>WORK</span>
+                            <span>ABOUT</span>
+                            <span>CONTACT</span>
+
+                        </div>
 
                     </div>
 
 
-                    <!-- MAIN -->
 
-                    <div class="ua-browser-main">
+                    <div class="site-heading">
 
+                        DIGITAL
+                        <br>
 
-                        <div class="browser-tag">
-
-                            CREATIVE DEVELOPER
-
-                        </div>
-
-
-                        <h3>
-
-                            DIGITAL
-
-                            <span>
-                                CRAFT.
-                            </span>
-
-                        </h3>
-
-
-                        <p>
-
-                            Design.
-                            Development.
-                            Strategy.
-
-                        </p>
-
-
-                        <div class="browser-line"></div>
-
-
-                        <!-- CARDS -->
-
-                        <div class="browser-cards">
-
-
-                            <div>
-
-                                <span>
-                                    01
-                                </span>
-
-                                <b>
-                                    UI / UX
-                                </b>
-
-                            </div>
-
-
-                            <div>
-
-                                <span>
-                                    02
-                                </span>
-
-                                <b>
-                                    WORDPRESS
-                                </b>
-
-                            </div>
-
-
-                            <div>
-
-                                <span>
-                                    03
-                                </span>
-
-                                <b>
-                                    SEO
-                                </b>
-
-                            </div>
-
-
-                        </div>
-
+                        <span>EXPERIENCE.</span>
 
                     </div>
 
 
-                    <!-- CURSOR -->
+                    <div class="site-line"></div>
 
-                    <div class="ua-fake-cursor">
 
-                        <span></span>
+                    <p class="site-text">
+
+                        Clean design. Smart development.
+                        Better performance.
+
+                    </p>
+
+
+                    <div class="mini-cards">
+
+                        <div class="mini-card">
+
+                            <small>
+                                01
+                            </small>
+
+                            <strong>
+                                UI / UX
+                            </strong>
+
+                        </div>
+
+
+                        <div class="mini-card">
+
+                            <small>
+                                02
+                            </small>
+
+                            <strong>
+                                WORDPRESS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="mini-card">
+
+                            <small>
+                                03
+                            </small>
+
+                            <strong>
+                                SEO
+                            </strong>
+
+                        </div>
 
                     </div>
 
 
                 </div>
 
-
             </div>
 
 
-            <!-- WORDPRESS BADGE -->
 
-            <div class="ua-wp-badge">
+            <!-- FLOATING CARD 1 -->
 
+            <div class="float-card float-one">
 
-                <div class="ua-wp-symbol">
+                <div class="float-icon">
                     W
                 </div>
 
+                <div>
+
+                    <strong>
+                        WORDPRESS
+                    </strong>
+
+                    <small>
+                        CMS DEVELOPMENT
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FLOATING CARD 2 -->
+
+            <div class="float-card float-two">
+
+                <div class="float-icon">
+                    98
+                </div>
 
                 <div>
 
+                    <strong>
+                        PERFORMANCE
+                    </strong>
+
                     <small>
-                        POWERED BY
+                        FAST & OPTIMIZED
                     </small>
 
+                </div>
+
+            </div>
+
+
+
+            <!-- FLOATING CARD 3 -->
+
+            <div class="float-card float-three">
+
+                <div class="float-icon">
+                    ↗
+                </div>
+
+                <div>
+
                     <strong>
-                        WORDPRESS
+                        CONVERSION
                     </strong>
 
-                </div>
-
-
-            </div>
-
-
-            <!-- PERFORMANCE -->
-
-            <div class="ua-performance">
-
-
-                <div class="performance-top">
-
-                    <span>
-                        PERFORMANCE
-                    </span>
-
-                    <b>
-                        98
-                    </b>
+                    <small>
+                        BUILT FOR RESULTS
+                    </small>
 
                 </div>
-
-
-                <div class="performance-bar">
-
-                    <span></span>
-
-                </div>
-
-
-                <small>
-                    OPTIMIZED EXPERIENCE
-                </small>
-
-
-            </div>
-
-
-            <!-- ROTATING SYMBOL -->
-
-            <div class="ua-rotate-symbol">
-
-                <span>
-                    ✦
-                </span>
 
             </div>
 
 
         </div>
-
-
-        <!-- =================================================
-             RIGHT
-        ================================================= -->
-
-        <div class="ua-pro-right">
-
-
-            <div class="ua-right-label">
-
-                SELECTED CAPABILITIES
-
-            </div>
-
-
-            <div class="ua-capability-list">
-
-
-                <a href="#services">
-
-                    <span>
-                        01
-                    </span>
-
-                    <strong>
-                        WORDPRESS
-                    </strong>
-
-                    <b>
-                        ↗
-                    </b>
-
-                </a>
-
-
-                <a href="#services">
-
-                    <span>
-                        02
-                    </span>
-
-                    <strong>
-                        WEB DESIGN
-                    </strong>
-
-                    <b>
-                        ↗
-                    </b>
-
-                </a>
-
-
-                <a href="#services">
-
-                    <span>
-                        03
-                    </span>
-
-                    <strong>
-                        DEVELOPMENT
-                    </strong>
-
-                    <b>
-                        ↗
-                    </b>
-
-                </a>
-
-
-                <a href="#services">
-
-                    <span>
-                        04
-                    </span>
-
-                    <strong>
-                        SEO & SPEED
-                    </strong>
-
-                    <b>
-                        ↗
-                    </b>
-
-                </a>
-
-
-            </div>
-
-
-            <div class="ua-scroll-indicator">
-
-                <span>
-                    SCROLL TO EXPLORE
-                </span>
-
-                <div></div>
-
-                <b>
-                    ↓
-                </b>
-
-            </div>
-
-
-        </div>
-
 
     </div>
 
 
-    <!-- =====================================================
-         MARQUEE
-    ===================================================== -->
+    <!-- SCROLL -->
 
-    <div class="ua-marquee">
+    <div class="scroll">
 
+        <span class="scroll-line"></span>
 
-        <div class="ua-marquee-track">
+        SCROLL TO EXPLORE
 
-
-            <span>
-                WORDPRESS
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                WEB DESIGN
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                DEVELOPMENT
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                CREATIVE SOLUTIONS
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                WORDPRESS
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                WEB DESIGN
-            </span>
-
-            <i>✦</i>
-
-
-            <span>
-                DEVELOPMENT
-            </span>
-
-            <i>✦</i>
-
-
-        </div>
-
+        <span>↓</span>
 
     </div>
 
+</section>
+
+</main>
+
+
+
+<!-- ======================================================
+     PLACEHOLDER SECTIONS
+     (NEXT WE WILL DESIGN THESE)
+======================================================= -->
+
+<section id="about"
+style="
+min-height:300px;
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+    <div style="text-align:center">
+
+        <p style="
+        color:#777;
+        letter-spacing:3px;
+        font-size:11px;
+        font-weight:bold;
+        ">
+            NEXT SECTION
+        </p>
+
+        <h2 style="
+        margin-top:15px;
+        font-size:40px;
+        ">
+            About Section
+        </h2>
+
+    </div>
 
 </section>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
-<script>
+<section id="work"
+style="
+min-height:300px;
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:center;
+">
 
-    const mobileButton =
-        document.getElementById("uaMobileButton");
+    <div style="text-align:center">
 
-    const mobileNav =
-        document.getElementById("uaMobileNav");
+        <p style="
+        color:#777;
+        letter-spacing:3px;
+        font-size:11px;
+        font-weight:bold;
+        ">
+            NEXT SECTION
+        </p>
 
+        <h2 style="
+        margin-top:15px;
+        font-size:40px;
+        ">
+            Portfolio Section
+        </h2>
 
-    mobileButton.addEventListener(
-        "click",
-        function () {
+    </div>
 
-            mobileNav.classList.toggle("open");
-
-        }
-    );
-
-
-    const mobileLinks =
-        mobileNav.querySelectorAll("a");
-
-
-    mobileLinks.forEach(
-        function(link) {
-
-            link.addEventListener(
-                "click",
-                function() {
-
-                    mobileNav.classList.remove(
-                        "open"
-                    );
-
-                }
-            );
-
-        }
-    );
+</section>
 
 
-</script>
+
+<section id="services"
+style="
+min-height:300px;
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+    <div style="text-align:center">
+
+        <p style="
+        color:#777;
+        letter-spacing:3px;
+        font-size:11px;
+        font-weight:bold;
+        ">
+            NEXT SECTION
+        </p>
+
+        <h2 style="
+        margin-top:15px;
+        font-size:40px;
+        ">
+            Services Section
+        </h2>
+
+    </div>
+
+</section>
+
+
+
+<section id="contact"
+style="
+min-height:300px;
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+    <div style="text-align:center">
+
+        <p style="
+        color:#777;
+        letter-spacing:3px;
+        font-size:11px;
+        font-weight:bold;
+        ">
+            NEXT SECTION
+        </p>
+
+        <h2 style="
+        margin-top:15px;
+        font-size:40px;
+        ">
+            Contact Section
+        </h2>
+
+    </div>
+
+</section>
 
 
 </body>
