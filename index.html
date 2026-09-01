@@ -1410,158 +1410,531 @@
 
 
         /* =========================================================
-           SERVICES
+           PREMIUM SERVICES — PERFORMANCE FIRST
         ========================================================= */
 
-        .services-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 15px;
-
-            margin-top: 55px;
-        }
-
-
-        .service-card {
-
+        .services-section {
             position: relative;
-
-            padding: 30px;
-
-            min-height: 230px;
-
-            border:
-                1px solid rgba(255,255,255,0.07);
-
-            border-radius: 18px;
-
-            background:
-                rgba(255,255,255,0.018);
-
+            padding: 120px 6% 130px;
+            background: #08090e;
             overflow: hidden;
-
-            transition: 0.35s ease;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            content-visibility: auto;
+            contain-intrinsic-size: 900px;
         }
 
-
-        .service-card::before {
-
+        .services-section::before {
             content: "";
-
             position: absolute;
-
-            width: 130px;
-            height: 130px;
-
-            right: -50px;
-            top: -50px;
-
+            width: 520px;
+            height: 520px;
+            left: -300px;
+            top: 120px;
             border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(128,85,255,0.15),
-                    transparent 70%
-                );
+            background: radial-gradient(circle, rgba(128,85,255,0.08), transparent 68%);
+            pointer-events: none;
         }
 
-
-        .service-card:hover {
-
-            transform: translateY(-7px);
-
-            border-color:
-                rgba(128,85,255,0.25);
-
-            background:
-                rgba(128,85,255,0.035);
+        .services-section::after {
+            content: "";
+            position: absolute;
+            width: 460px;
+            height: 460px;
+            right: -280px;
+            bottom: -180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(67,186,255,0.06), transparent 68%);
+            pointer-events: none;
         }
 
+        .services-container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            z-index: 2;
+        }
 
-        .service-number {
+        .services-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 45px;
+        }
 
-            color: #454a55;
+        .services-heading-left {
+            max-width: 760px;
+        }
 
+        .services-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--blue);
             font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
 
+        .services-label::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--blue);
+            box-shadow: 0 0 12px rgba(67,186,255,0.45);
+        }
+
+        .services-title {
+            margin-top: 28px;
+            color: var(--white);
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 0.96;
+            letter-spacing: -4px;
+            font-weight: 950;
+        }
+
+        .services-title span {
+            color: var(--purple-light);
+        }
+
+        .services-intro {
+            max-width: 620px;
+            margin-top: 25px;
+            color: #707682;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .services-meta {
+            flex: 0 0 auto;
+            min-width: 175px;
+            padding: 17px 18px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.018);
+            text-align: left;
+        }
+
+        .services-meta small {
+            display: block;
+            color: #555b67;
+            font-size: 7px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .services-meta strong {
+            display: block;
+            margin-top: 7px;
+            color: #dfe1e7;
+            font-size: 11px;
             font-weight: 900;
         }
 
-
-        .service-card h3 {
-
-            margin-top: 50px;
-
-            font-size: 22px;
+        .services-meta span {
+            display: block;
+            margin-top: 5px;
+            color: var(--green);
+            font-size: 8px;
+            font-weight: 900;
         }
 
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 58px;
+        }
+
+        .service-card {
+            position: relative;
+            min-height: 270px;
+            padding: 27px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+            overflow: hidden;
+            isolation: isolate;
+            transition: transform .28s ease, border-color .28s ease, background .28s ease;
+        }
+
+        .service-card:nth-child(1) {
+            grid-column: span 2;
+            min-height: 300px;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            right: -95px;
+            top: -95px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128,85,255,0.14), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            left: 27px;
+            right: 27px;
+            bottom: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(67,186,255,0.28), transparent);
+            opacity: 0;
+            transition: opacity .28s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(128,85,255,0.28);
+            background: linear-gradient(145deg, rgba(128,85,255,0.055), rgba(255,255,255,0.015));
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-number {
+            color: #555b67;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .service-type {
+            color: #464c58;
+            font-size: 7px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        .service-card h3 {
+            max-width: 520px;
+            margin-top: 55px;
+            color: #eceef3;
+            font-size: 25px;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            font-weight: 950;
+        }
 
         .service-card p {
-
-            margin-top: 12px;
-
+            max-width: 520px;
+            margin-top: 14px;
             color: #707682;
+            font-size: 11px;
+            line-height: 1.75;
+        }
 
-            font-size: 12px;
+        .service-bottom {
+            position: absolute;
+            left: 27px;
+            right: 27px;
+            bottom: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
 
-            line-height: 1.7;
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .service-tags span {
+            padding: 6px 8px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 7px;
+            color: #686e7a;
+            background: rgba(255,255,255,0.018);
+            font-size: 6px;
+            font-weight: 900;
+            letter-spacing: .8px;
+        }
+
+        .service-arrow {
+            color: #454a55;
+            font-size: 16px;
+            transition: color .28s ease, transform .28s ease;
+        }
+
+        .service-card:hover .service-arrow {
+            color: var(--blue);
+            transform: translate(3px, -3px);
+        }
+
+        @media (max-width: 1050px) {
+            .services-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .services-meta {
+                min-width: 190px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .services-section {
+                padding: 85px 20px 95px;
+            }
+
+            .services-title {
+                font-size: 47px;
+                letter-spacing: -3px;
+            }
+
+            .services-intro {
+                font-size: 12px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 42px;
+            }
+
+            .service-card,
+            .service-card:nth-child(1) {
+                grid-column: auto;
+                min-height: 245px;
+                padding: 23px;
+            }
+
+            .service-card h3 {
+                margin-top: 48px;
+                font-size: 23px;
+            }
+
+            .service-bottom {
+                left: 23px;
+                right: 23px;
+                bottom: 19px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .service-card,
+            .service-card::after,
+            .service-arrow {
+                transition: none;
+            }
         }
 
 
         /* =========================================================
-           CONTACT
+           CONTACT — SCROLL REVEAL CTA
         ========================================================= */
 
-        .contact-box {
-
-            margin-top: 55px;
-
-            padding: 45px;
-
+        .contact-section {
+            position: relative;
+            min-height: 100vh;
+            padding: 110px 6% 90px;
             display: flex;
-
             align-items: center;
-
-            justify-content: space-between;
-
-            gap: 30px;
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            border-radius: 22px;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(128,85,255,0.07),
-                    rgba(67,186,255,0.03)
-                );
+            justify-content: center;
+            overflow: hidden;
+            background: #07080d;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            isolation: isolate;
+            content-visibility: auto;
+            contain-intrinsic-size: 850px;
         }
 
-
-        .contact-box h3 {
-
-            font-size: 30px;
-
-            letter-spacing: -1px;
+        .contact-grid-lines {
+            position: absolute;
+            inset: 27% 0 18%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: .5;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 18px,
+                rgba(67,186,255,.075) 19px,
+                transparent 20px
+            );
         }
 
-
-        .contact-box p {
-
-            margin-top: 10px;
-
-            color: #777d89;
-
-            font-size: 12px;
+        .contact-glow {
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128,85,255,.12), transparent 66%);
+            pointer-events: none;
+            z-index: -1;
         }
 
+        .contact-orb {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 22px rgba(67,186,255,.6);
+            opacity: .65;
+            pointer-events: none;
+        }
+
+        .contact-orb.one { left: 9%; top: 30%; }
+        .contact-orb.two { right: 11%; top: 24%; background: #8055ff; box-shadow: 0 0 22px rgba(128,85,255,.6); }
+        .contact-orb.three { left: 19%; bottom: 19%; width: 7px; height: 7px; }
+        .contact-orb.four { right: 18%; bottom: 24%; width: 7px; height: 7px; background: #8055ff; }
+
+        .contact-inner {
+            width: min(1280px, 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 34px;
+            color: #7d8491;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .contact-kicker::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--blue), #8055ff);
+        }
+
+        .contact-title {
+            position: relative;
+            margin: 0 auto;
+            max-width: 1200px;
+            font-size: clamp(58px, 9.3vw, 148px);
+            line-height: .83;
+            letter-spacing: -7px;
+            font-weight: 950;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(239,241,246,.22);
+            text-wrap: balance;
+        }
+
+        .contact-title-fill {
+            position: absolute;
+            inset: 0;
+            color: #f3f4f7;
+            -webkit-text-stroke: 0;
+            clip-path: inset(0 calc(100% - var(--contact-progress, 0%)) 0 0);
+            transition: clip-path .08s linear;
+            pointer-events: none;
+        }
+
+        .contact-title .accent {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(128,85,255,.55);
+        }
+
+        .contact-title-fill .accent {
+            color: #8055ff;
+            -webkit-text-stroke: 0;
+        }
+
+        .contact-talk-wrap {
+            margin-top: 48px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .contact-talk {
+            display: inline-block;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(67,186,255,.35);
+            font-size: clamp(54px, 8vw, 126px);
+            line-height: .85;
+            letter-spacing: -5px;
+            font-weight: 950;
+            text-transform: uppercase;
+            border-bottom: 2px solid rgba(67,186,255,.22);
+            padding: 0 8px 14px;
+            transform-origin: center bottom;
+        }
+
+        .contact-talk.is-ready {
+            animation: contactBounce 1.9s ease-in-out infinite;
+        }
+
+        .contact-talk::after {
+            content: '';
+            position: absolute;
+            left: 7%;
+            right: 7%;
+            bottom: 7px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--blue), #8055ff, transparent);
+            opacity: .65;
+        }
+
+        .contact-subtext {
+            max-width: 590px;
+            margin: 28px auto 0;
+            color: #707786;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .contact-action {
+            margin-top: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 22px;
+            border: 1px solid rgba(67,186,255,.22);
+            border-radius: 999px;
+            color: #eef0f5;
+            background: rgba(12,14,21,.72);
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            transition: transform .25s ease, border-color .25s ease, background .25s ease;
+        }
+
+        .contact-action span {
+            color: var(--blue);
+            font-size: 16px;
+        }
+
+        .contact-action:hover {
+            transform: translateY(-3px);
+            border-color: rgba(67,186,255,.55);
+            background: rgba(67,186,255,.06);
+        }
+
+        @keyframes contactBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-7px) scale(1.012); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .contact-title-fill { transition: none; }
+            .contact-talk.is-ready { animation: none; }
+            .contact-action { transition: none; }
+        }
 
         /* =========================================================
            FOOTER
@@ -1845,13 +2218,24 @@
             }
 
 
-            .contact-box {
+            .contact-section {
+                min-height: 820px;
+                padding: 90px 20px 70px;
+            }
 
-                flex-direction: column;
+            .contact-title {
+                font-size: clamp(52px, 15vw, 90px);
+                letter-spacing: -4px;
+                line-height: .86;
+            }
 
-                align-items: flex-start;
+            .contact-talk {
+                font-size: clamp(48px, 13vw, 78px);
+                letter-spacing: -3px;
+            }
 
-                padding: 30px;
+            .contact-subtext {
+                font-size: 12px;
             }
         }
 
@@ -2140,7 +2524,399 @@
             .about-line { display: none; }
         }
 
-    </style>
+    
+        /* =========================================================
+           PROJECT-FOCUSED WORK EXPERIENCE
+           Same UA purple / blue visual language
+        ========================================================= */
+
+        .experience-section {
+            position: relative;
+            padding: 125px 6% 145px;
+            background: var(--bg);
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .experience-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(128,85,255,0.075), transparent 31%),
+                linear-gradient(180deg, transparent 0%, rgba(67,186,255,0.018) 52%, transparent 100%);
+        }
+
+        .experience-section::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 58%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(128,85,255,0.18), rgba(67,186,255,0.12), transparent);
+            pointer-events: none;
+        }
+
+        .experience-container {
+            position: relative;
+            max-width: 1240px;
+            margin: auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .experience-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .experience-label span {
+            width: 30px;
+            height: 1px;
+            background: var(--blue);
+            box-shadow: 0 0 14px rgba(67,186,255,0.55);
+        }
+
+        .experience-title {
+            max-width: 980px;
+            margin: 30px auto 0;
+            color: var(--white);
+            font-size: clamp(42px, 5.2vw, 76px);
+            line-height: 0.94;
+            letter-spacing: -4px;
+            font-weight: 950;
+        }
+
+        .experience-title span {
+            color: var(--purple-light);
+        }
+
+        .experience-intro {
+            max-width: 690px;
+            margin: 25px auto 0;
+            color: #737986;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* Main dome / project gallery */
+        .experience-timeline {
+            position: relative;
+            width: min(1040px, 100%);
+            height: 610px;
+            margin: 78px auto 0;
+            overflow: visible;
+        }
+
+        .experience-timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 930px;
+            height: 505px;
+            transform: translateX(-50%);
+            border-radius: 520px 520px 0 0;
+            background:
+                radial-gradient(circle at 50% 8%, rgba(128,85,255,0.055), transparent 42%),
+                linear-gradient(180deg, #11141c 0%, #101219 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 0;
+            box-shadow: 0 -35px 90px rgba(0,0,0,0.22);
+        }
+
+        .experience-timeline::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -38px;
+            width: 690px;
+            height: 470px;
+            transform: translateX(-50%);
+            border: 1px solid rgba(128,85,255,0.12);
+            border-bottom: 0;
+            border-radius: 500px 500px 0 0;
+            pointer-events: none;
+        }
+
+        .experience-orbit {
+            position: absolute;
+            left: 50%;
+            top: 64px;
+            width: 610px;
+            height: 440px;
+            transform: translateX(-50%);
+            border: 1px solid rgba(67,186,255,0.075);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .experience-orbit::after {
+            content: "";
+            position: absolute;
+            inset: 70px 95px;
+            border: 1px solid rgba(128,85,255,0.07);
+            border-radius: 50%;
+        }
+
+        .orbit-left,
+        .orbit-right {
+            display: none;
+        }
+
+        /* Project logo nodes */
+        .experience-project {
+            position: absolute;
+            z-index: 8;
+            width: 82px;
+            height: 82px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            color: inherit;
+            transition: transform .35s ease, filter .35s ease;
+        }
+
+        .experience-project::before {
+            content: "";
+            position: absolute;
+            inset: -7px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.07);
+            opacity: 0;
+            transform: scale(.88);
+            transition: .35s ease;
+        }
+
+        .experience-project:hover,
+        .experience-project.active {
+            transform: translateY(-7px) scale(1.05);
+        }
+
+        .experience-project:hover::before,
+        .experience-project.active::before {
+            opacity: 1;
+            transform: scale(1);
+            border-color: rgba(67,186,255,0.38);
+            box-shadow: 0 0 0 5px rgba(67,186,255,0.035), 0 0 28px rgba(128,85,255,0.16);
+        }
+
+        .project-thumb {
+            position: relative;
+            width: 82px;
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.11);
+            background: radial-gradient(circle at 35% 25%, rgba(128,85,255,0.16), #0b0d13 68%);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.45), inset 0 1px rgba(255,255,255,0.05);
+        }
+
+        .project-thumb::after {
+            content: "";
+            position: absolute;
+            inset: 9px;
+            border-radius: 50%;
+            border: 1px solid rgba(67,186,255,0.10);
+            pointer-events: none;
+        }
+
+        .project-thumb img {
+            position: relative;
+            z-index: 2;
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .project-fallback {
+            position: relative;
+            z-index: 2;
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 950;
+            letter-spacing: 1px;
+        }
+
+        .project-meta {
+            position: absolute;
+            top: 91px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            color: #4f5663;
+            font-size: 7px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+        }
+
+        .project-1 { left: 185px; top: 78px; }
+        .project-2 { left: 70px; top: 260px; }
+        .project-3 { left: 355px; top: 8px; }
+        .project-4 { right: 355px; top: 8px; }
+        .project-5 { right: 70px; top: 260px; }
+        .project-6 { right: 185px; top: 78px; }
+
+        /* Center selected project */
+        .experience-center {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 690px;
+            min-height: 360px;
+            transform: translateX(-50%);
+            padding: 30px 56px 42px;
+            text-align: center;
+            border-radius: 30px 30px 0 0;
+            background: linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012));
+            border: 1px solid rgba(255,255,255,0.075);
+            border-bottom: 0;
+            box-shadow: 0 -25px 75px rgba(0,0,0,0.28), inset 0 1px rgba(255,255,255,0.04);
+            z-index: 5;
+        }
+
+        .experience-center-icon {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 1px solid rgba(67,186,255,0.38);
+            background: radial-gradient(circle at 35% 25%, rgba(67,186,255,0.13), rgba(128,85,255,0.07) 48%, #090b11 75%);
+            box-shadow: 0 0 34px rgba(67,186,255,0.08);
+        }
+
+        .experience-center-icon img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .center-fallback {
+            color: var(--blue);
+            font-size: 19px;
+            font-weight: 950;
+            letter-spacing: 1px;
+        }
+
+        .experience-center-kicker {
+            color: #565e6b;
+            font-size: 8px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .experience-center h3 {
+            margin-top: 10px;
+            color: var(--white);
+            font-size: clamp(25px, 3vw, 34px);
+            line-height: 1;
+            letter-spacing: -1.5px;
+            font-weight: 950;
+        }
+
+        .experience-period {
+            margin-top: 9px;
+            color: var(--blue);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        .experience-divider {
+            width: 100%;
+            height: 1px;
+            margin: 27px 0 22px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .experience-details {
+            display: grid;
+            grid-template-columns: 135px 1fr;
+            gap: 35px;
+            text-align: left;
+        }
+
+        .experience-role {
+            color: #e8e9ee;
+            font-size: 11px;
+            line-height: 1.5;
+            font-weight: 900;
+        }
+
+        .experience-description p {
+            margin-bottom: 12px;
+            color: #747b88;
+            font-size: 11px;
+            line-height: 1.75;
+        }
+
+        .experience-description p:last-child { margin-bottom: 0; }
+
+        .experience-hint {
+            position: absolute;
+            right: 8px;
+            bottom: 19px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #444b58;
+            font-size: 7px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            z-index: 10;
+        }
+
+        .experience-hint::after {
+            content: "↗";
+            color: var(--blue);
+            font-size: 12px;
+        }
+
+        @media (max-width: 1050px) {
+            .experience-timeline { transform: scale(.88); transform-origin: top center; margin-bottom: -70px; }
+        }
+
+        @media (max-width: 760px) {
+            .experience-section { padding: 90px 20px 105px; }
+            .experience-title { font-size: 46px; letter-spacing: -3px; }
+            .experience-intro { font-size: 12px; }
+            .experience-timeline { height: 760px; margin-top: 48px; transform: none; }
+            .experience-timeline::before { width: 620px; height: 590px; }
+            .experience-timeline::after { display: none; }
+            .experience-orbit { width: 480px; height: 420px; top: 110px; }
+            .experience-center { width: 92%; min-height: 405px; padding: 26px 22px 35px; }
+            .experience-details { grid-template-columns: 1fr; gap: 14px; }
+            .experience-project { width: 65px; height: 65px; }
+            .project-thumb { width: 65px; height: 65px; }
+            .project-thumb img { width: 42px; height: 42px; }
+            .project-meta { top: 72px; font-size: 6px; }
+            .project-1 { left: 24%; top: 86px; }
+            .project-2 { left: 4%; top: 250px; }
+            .project-3 { left: 38%; top: 18px; }
+            .project-4 { right: 38%; top: 18px; }
+            .project-5 { right: 4%; top: 250px; }
+            .project-6 { right: 24%; top: 86px; }
+            .experience-hint { display: none; }
+        }
+</style>
 </head>
 
 
@@ -2693,226 +3469,347 @@
 
 
 
+
         <!-- =========================================================
-             SERVICES
+             WORK EXPERIENCE
+             PROJECT LOGO SHOWCASE
         ========================================================= -->
+        <section class="experience-section" id="work">
+            <div class="experience-container">
 
-        <section class="section" id="services">
-
-            <div class="section-container">
-
-                <div class="section-label">
-                    WHAT I DO
+                <div class="experience-label">
+                    <span></span>
+                    WORK EXPERIENCE
                 </div>
 
-
-                <h2 class="section-title">
-                    From idea to
-                    finished website.
+                <h2 class="experience-title">
+                    A PROVEN WORDPRESS DEVELOPER
+                    <span>BUILDING REAL</span>
+                    DIGITAL EXPERIENCES.
                 </h2>
 
+                <p class="experience-intro">
+                    A selection of WordPress projects built with clean design,
+                    responsive development, strong performance and business-focused structure.
+                </p>
+
+                <div class="experience-timeline">
+
+                    <div class="experience-orbit"></div>
+
+                    <!-- Replace these image paths with your real project logos -->
+                    <button class="experience-project project-1 active" type="button"
+                        data-name="Business Website" data-date="2026 • WORDPRESS"
+                        data-role="WORDPRESS DEVELOPMENT"
+                        data-description="A professional WordPress business website built around clear structure, responsive design and a strong user journey.">
+                        <div class="project-thumb">
+                            <img src="images/project-01-logo.png" alt="Project 01 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">01</span>
+                        </div>
+                        <span class="project-meta">PROJECT 01</span>
+                    </button>
+
+                    <button class="experience-project project-2" type="button"
+                        data-name="Service Website" data-date="2026 • WORDPRESS"
+                        data-role="DESIGN + DEVELOPMENT"
+                        data-description="A service-focused website designed to present information clearly and guide visitors toward action.">
+                        <div class="project-thumb">
+                            <img src="images/project-02-logo.png" alt="Project 02 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">02</span>
+                        </div>
+                        <span class="project-meta">PROJECT 02</span>
+                    </button>
+
+                    <button class="experience-project project-3" type="button"
+                        data-name="Agency Website" data-date="2026 • WORDPRESS"
+                        data-role="WORDPRESS DESIGN"
+                        data-description="A polished WordPress experience focused on visual hierarchy, brand presentation and responsive layouts.">
+                        <div class="project-thumb">
+                            <img src="images/project-03-logo.png" alt="Project 03 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">03</span>
+                        </div>
+                        <span class="project-meta">PROJECT 03</span>
+                    </button>
+
+                    <button class="experience-project project-4" type="button"
+                        data-name="E-Commerce Website" data-date="2026 • WORDPRESS"
+                        data-role="WOOCOMMERCE DEVELOPMENT"
+                        data-description="A conversion-focused storefront built around product presentation, usability and a smoother shopping experience.">
+                        <div class="project-thumb">
+                            <img src="images/project-04-logo.png" alt="Project 04 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">04</span>
+                        </div>
+                        <span class="project-meta">PROJECT 04</span>
+                    </button>
+
+                    <button class="experience-project project-5" type="button"
+                        data-name="Landing Page" data-date="2026 • WORDPRESS"
+                        data-role="LANDING PAGE DEVELOPMENT"
+                        data-description="A focused landing page created around strong messaging, clean hierarchy and a direct call to action.">
+                        <div class="project-thumb">
+                            <img src="images/project-05-logo.png" alt="Project 05 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">05</span>
+                        </div>
+                        <span class="project-meta">PROJECT 05</span>
+                    </button>
+
+                    <button class="experience-project project-6" type="button"
+                        data-name="Business Portfolio" data-date="2026 • WORDPRESS"
+                        data-role="WORDPRESS DEVELOPMENT"
+                        data-description="A modern portfolio-style WordPress project combining professional presentation, responsive structure and clean navigation.">
+                        <div class="project-thumb">
+                            <img src="images/project-06-logo.png" alt="Project 06 logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">06</span>
+                        </div>
+                        <span class="project-meta">PROJECT 06</span>
+                    </button>
+
+                    <!-- Selected project information -->
+                    <div class="experience-center">
+                        <div class="experience-center-icon">
+                            <img id="experienceCenterLogo" src="images/project-01-logo.png" alt="Selected project logo"
+                                 onerror="this.style.display='none'; document.getElementById('centerFallback').style.display='block';">
+                            <span id="centerFallback" class="center-fallback" style="display:none;">WP</span>
+                        </div>
+
+                        <div class="experience-center-kicker">SELECTED WORDPRESS PROJECT</div>
+                        <h3 id="experienceName">Business Website</h3>
+                        <div class="experience-period" id="experienceDate">2026 • WORDPRESS</div>
+
+                        <div class="experience-divider"></div>
+
+                        <div class="experience-details">
+                            <div class="experience-role" id="experienceRole">
+                                WORDPRESS<br>DEVELOPMENT
+                            </div>
+                            <div class="experience-description">
+                                <p id="experienceDescription">
+                                    A professional WordPress business website built around clear structure,
+                                    responsive design and a strong user journey.
+                                </p>
+                                <p>
+                                    Clean layouts • Responsive experience • Performance-focused structure
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-hint">HOVER A PROJECT TO EXPLORE</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PREMIUM SERVICES
+        ========================================================= -->
+
+        <section class="services-section" id="services">
+
+            <div class="services-container">
+
+                <div class="services-heading">
+
+                    <div class="services-heading-left">
+                        <div class="services-label">WHAT I BUILD</div>
+
+                        <h2 class="services-title">
+                            Websites built for
+                            <span>real results.</span>
+                        </h2>
+
+                        <p class="services-intro">
+                            From content-driven blogs to conversion-focused stores and
+                            high-impact landing pages — every website is built around
+                            clean structure, responsive design, speed and usability.
+                        </p>
+                    </div>
+
+                    <div class="services-meta">
+                        <small>BUILD STANDARD</small>
+                        <strong>PERFORMANCE FIRST</strong>
+                        <span>● CLEAN • FAST • RESPONSIVE</span>
+                    </div>
+
+                </div>
 
                 <div class="services-grid">
 
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            01
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">01</div>
+                            <div class="service-type">CONTENT / WORDPRESS</div>
                         </div>
 
-                        <h3>
-                            WordPress
-                        </h3>
-
+                        <h3>Blogging Website</h3>
                         <p>
-                            Custom WordPress websites built
-                            around your brand, goals and audience.
+                            Fast, readable and SEO-friendly blogging websites designed
+                            for publishing content consistently and growing an audience.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>SEO READY</span>
+                                <span>RESPONSIVE</span>
+                                <span>CMS</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
-
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            02
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">02</div>
+                            <div class="service-type">ONLINE STORE</div>
                         </div>
 
-                        <h3>
-                            Web Design
-                        </h3>
-
+                        <h3>E-Commerce Store</h3>
                         <p>
-                            Clean, modern and responsive interfaces
-                            designed to create a strong first impression.
+                            Product-focused online stores with a smooth shopping journey,
+                            clean layouts and conversion-focused presentation.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>SHOPPING</span>
+                                <span>CHECKOUT</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
-
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            03
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">03</div>
+                            <div class="service-type">CONVERSION</div>
                         </div>
 
-                        <h3>
-                            Development
-                        </h3>
-
+                        <h3>Landing Page</h3>
                         <p>
-                            Reliable front-end development with
-                            attention to structure, usability and speed.
+                            Focused pages built around one clear goal — turning traffic
+                            into enquiries, leads, sign-ups or sales.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>CTA FOCUSED</span>
+                                <span>FAST</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
-
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            04
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">04</div>
+                            <div class="service-type">PERSONAL BRAND</div>
                         </div>
 
-                        <h3>
-                            SEO
-                        </h3>
-
+                        <h3>Portfolio Site</h3>
                         <p>
-                            Search-friendly website structures designed
-                            to give your content a stronger foundation.
+                            Premium portfolio websites that present your work, skills and
+                            personal brand with a strong visual hierarchy.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>PROJECTS</span>
+                                <span>PERSONAL BRAND</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
-
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            05
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">05</div>
+                            <div class="service-type">BUSINESS / CREATIVE</div>
                         </div>
 
-                        <h3>
-                            Performance
-                        </h3>
-
+                        <h3>Agency Site</h3>
                         <p>
-                            Fast-loading experiences focused on usability,
-                            responsiveness and technical quality.
+                            Professional agency websites designed to communicate expertise,
+                            build trust and turn visitors into qualified enquiries.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>TRUST</span>
+                                <span>LEADS</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
-
-
-                    <div class="service-card">
-
-                        <div class="service-number">
-                            06
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-number">06</div>
+                            <div class="service-type">LOCAL / PROFESSIONAL</div>
                         </div>
 
-                        <h3>
-                            Website Support
-                        </h3>
-
+                        <h3>Service Site</h3>
                         <p>
-                            Continuous improvements, updates and
-                            optimization to keep your website moving forward.
+                            Clear service-based websites that make it easy for customers
+                            to understand your offer and take the next step.
                         </p>
 
-                    </div>
+                        <div class="service-bottom">
+                            <div class="service-tags">
+                                <span>LOCAL SEO</span>
+                                <span>LEADS</span>
+                            </div>
+                            <span class="service-arrow">↗</span>
+                        </div>
+                    </article>
 
                 </div>
 
             </div>
 
         </section>
-
-
-
-        <!-- =========================================================
-             WORK
-        ========================================================= -->
-
-        <section class="section" id="work">
-
-            <div class="section-container">
-
-                <div class="section-label">
-                    SELECTED WORK
-                </div>
-
-
-                <h2 class="section-title">
-                    Projects that turn
-                    ideas into experiences.
-                </h2>
-
-
-                <p class="section-text">
-
-                    This section will showcase your real client
-                    projects, WordPress websites, redesigns and
-                    other selected work.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
         <!-- =========================================================
              CONTACT
         ========================================================= -->
 
-        <section class="section" id="contact">
+        <section class="contact-section" id="contact">
 
-            <div class="section-container">
+            <div class="contact-grid-lines" aria-hidden="true"></div>
+            <div class="contact-glow" aria-hidden="true"></div>
+            <span class="contact-orb one" aria-hidden="true"></span>
+            <span class="contact-orb two" aria-hidden="true"></span>
+            <span class="contact-orb three" aria-hidden="true"></span>
+            <span class="contact-orb four" aria-hidden="true"></span>
 
-                <div class="section-label">
-                    HAVE A PROJECT?
-                </div>
+            <div class="contact-inner">
 
+                <div class="contact-kicker">LET'S CREATE SOMETHING GREAT</div>
 
-                <h2 class="section-title">
-                    Let's build something
-                    worth remembering.
-                </h2>
-
-
-                <div class="contact-box">
-
-                    <div>
-
-                        <h3>
-                            Ready to start?
-                        </h3>
-
-                        <p>
-                            Tell me what you're working on
-                            and let's turn it into a strong website.
-                        </p>
-
+                <div class="contact-title" aria-label="Have a project in mind?">
+                    HAVE A PROJECT<br>
+                    IN <span class="accent">MIND?</span>
+                    <div class="contact-title-fill" aria-hidden="true">
+                        HAVE A PROJECT<br>
+                        IN <span class="accent">MIND?</span>
                     </div>
-
-
-                    <a href="mailto:hello@example.com"
-                        class="primary-btn">
-
-                        GET IN TOUCH
-
-                        <span>↗</span>
-
-                    </a>
-
                 </div>
+
+                <div class="contact-talk-wrap">
+                    <a href="mailto:hello@example.com" class="contact-talk" id="contactTalk">LET'S TALK</a>
+                </div>
+
+                <p class="contact-subtext">
+                    Have a WordPress project in mind? Tell me what you need,
+                    and let's build a fast, responsive and professional website.
+                </p>
+
+                <a href="mailto:hello@example.com" class="contact-action">
+                    START A PROJECT <span>↗</span>
+                </a>
 
             </div>
 
@@ -2932,6 +3829,87 @@
 
     </footer>
 
+
+    <script>
+        (function () {
+            const projects = document.querySelectorAll('.experience-project');
+            const name = document.getElementById('experienceName');
+            const date = document.getElementById('experienceDate');
+            const role = document.getElementById('experienceRole');
+            const description = document.getElementById('experienceDescription');
+            const centerLogo = document.getElementById('experienceCenterLogo');
+            const fallback = document.getElementById('centerFallback');
+
+            function selectProject(project) {
+                projects.forEach(item => item.classList.remove('active'));
+                project.classList.add('active');
+
+                name.textContent = project.dataset.name;
+                date.textContent = project.dataset.date;
+                role.innerHTML = project.dataset.role.replace(/ \\+ /g, ' +<br>');
+                description.textContent = project.dataset.description;
+
+                const img = project.querySelector('img');
+                if (img && img.getAttribute('src')) {
+                    centerLogo.src = img.getAttribute('src');
+                    centerLogo.style.display = 'block';
+                    fallback.style.display = 'none';
+                } else {
+                    centerLogo.style.display = 'none';
+                    fallback.style.display = 'block';
+                }
+            }
+
+            projects.forEach(project => {
+                project.addEventListener('mouseenter', () => selectProject(project));
+                project.addEventListener('focus', () => selectProject(project));
+                project.addEventListener('click', () => selectProject(project));
+            });
+        })();
+
+        /* =========================================================
+           CONTACT SCROLL REVEAL
+        ========================================================= */
+        (function () {
+            const section = document.getElementById('contact');
+            const fill = section && section.querySelector('.contact-title-fill');
+            const talk = document.getElementById('contactTalk');
+
+            if (!section || !fill || !talk) return;
+
+            let ticking = false;
+
+            function updateContact() {
+                const rect = section.getBoundingClientRect();
+                const viewport = window.innerHeight;
+                const travel = Math.max(1, rect.height - viewport * 0.25);
+                const passed = viewport * 0.72 - rect.top;
+                const progress = Math.max(0, Math.min(1, passed / travel));
+
+                section.style.setProperty('--contact-progress', (progress * 100).toFixed(2) + '%');
+
+                if (progress > 0.94) {
+                    talk.classList.add('is-ready');
+                } else {
+                    talk.classList.remove('is-ready');
+                }
+
+                ticking = false;
+            }
+
+            function requestUpdate() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateContact);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestUpdate, { passive: true });
+            window.addEventListener('resize', requestUpdate);
+            updateContact();
+        })();
+
+    </script>
 
 </body>
 
