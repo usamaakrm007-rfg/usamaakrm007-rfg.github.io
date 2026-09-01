@@ -1,2220 +1,2548 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>UA WordPress — Web Design & Development</title>
-
-<meta name="description" content="UA WordPress — Professional WordPress web design, development, SEO and performance solutions.">
-
-<style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #08090d;
-    color: #f5f5f7;
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    font-family: inherit;
-}
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-:root {
-    --bg: #08090d;
-    --card: #101219;
-    --card-light: #151821;
-    --white: #f7f7f8;
-    --muted: #8d929f;
-    --border: rgba(255,255,255,0.09);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    --primary: #7c4dff;
-    --secondary: #4db8ff;
-    --accent: #a879ff;
-}
+    <title>UA WordPress Portfolio</title>
 
-.container {
-    width: min(1180px, calc(100% - 48px));
-    margin: auto;
-}
-
-.section {
-    padding: 120px 0;
-}
-
-::selection {
-    background: var(--primary);
-    color: white;
-}
+    <meta name="description"
+        content="Professional WordPress design, development, SEO and performance services.">
 
+    <style>
 
-/* =========================================================
-   BACKGROUND EFFECT
-========================================================= */
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 650px;
-    height: 650px;
-    top: -250px;
-    left: -250px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    background: radial-gradient(
-        circle,
-        rgba(124,77,255,0.12),
-        transparent 65%
-    );
+        html {
+            scroll-behavior: smooth;
+        }
 
-    pointer-events: none;
-    z-index: -1;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08090e;
+            color: #f4f5f7;
+            overflow-x: hidden;
+        }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    right: -250px;
-    bottom: -250px;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    background: radial-gradient(
-        circle,
-        rgba(77,184,255,0.08),
-        transparent 65%
-    );
 
-    pointer-events: none;
-    z-index: -1;
-}
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
 
+        :root {
+            --bg: #08090e;
+            --card: #0e1017;
+            --card-light: #131620;
 
-/* =========================================================
-   HEADER
-========================================================= */
+            --white: #f5f5f7;
+            --muted: #777d89;
+            --muted-light: #9a9fab;
 
-header {
-    position: fixed;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
+            --purple: #8055ff;
+            --purple-light: #a47cff;
 
-    width: min(1120px, calc(100% - 32px));
+            --blue: #43baff;
+            --green: #55d89a;
 
-    height: 72px;
+            --border: rgba(255,255,255,0.09);
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    padding: 0 22px;
+        /* =========================================================
+           HEADER
+        ========================================================= */
 
-    background: rgba(10,11,16,0.82);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
 
-    border: 1px solid var(--border);
-    border-radius: 18px;
+            width: 100%;
+            height: 82px;
 
-    z-index: 1000;
+            display: flex;
+            align-items: center;
 
-    box-shadow:
-        0 15px 45px rgba(0,0,0,0.28);
-}
+            padding: 0 6%;
 
+            background: rgba(8,9,14,0.72);
 
-/* LOGO */
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 11px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
 
-    font-size: 19px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
+            z-index: 1000;
+        }
 
-.logo-box {
-    width: 38px;
-    height: 38px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        /* LOGO */
 
-    border-radius: 11px;
+        .logo {
+            width: 45px;
+            height: 45px;
 
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    color: white;
+            border-radius: 13px;
 
-    font-size: 14px;
-    font-weight: 900;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--blue)
+                );
 
-    box-shadow:
-        0 0 25px rgba(124,77,255,0.28);
-}
+            color: white;
 
+            font-size: 15px;
+            font-weight: 900;
 
-/* NAVIGATION */
+            box-shadow:
+                0 0 30px rgba(128,85,255,0.25);
 
-nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+            transition: 0.3s ease;
+        }
 
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
+        .logo:hover {
+            transform: rotate(-5deg) scale(1.05);
+        }
 
-nav a {
-    position: relative;
 
-    padding: 11px 15px;
+        /* CENTER MENU */
 
-    color: #969aa5;
+        .nav {
+            position: absolute;
 
-    font-size: 13px;
-    font-weight: 700;
+            left: 50%;
+            transform: translateX(-50%);
 
-    transition: 0.3s ease;
+            display: flex;
+            align-items: center;
 
-    border-radius: 10px;
-}
+            gap: 8px;
 
-nav a::before {
-    content: "";
+            padding: 7px;
 
-    position: absolute;
+            border:
+                1px solid rgba(255,255,255,0.07);
 
-    inset: 0;
+            border-radius: 15px;
 
-    background: linear-gradient(
-        135deg,
-        rgba(124,77,255,0.16),
-        rgba(77,184,255,0.08)
-    );
+            background:
+                rgba(255,255,255,0.025);
+        }
 
-    border: 1px solid rgba(124,77,255,0.18);
 
-    border-radius: 10px;
+        .nav a {
+            position: relative;
 
-    opacity: 0;
+            padding: 10px 16px;
 
-    transform: scale(0.85);
+            color: #858a96;
 
-    transition: 0.3s ease;
+            font-size: 11px;
 
-    z-index: -1;
-}
+            font-weight: 800;
 
-nav a:hover {
-    color: white;
-}
+            letter-spacing: 0.5px;
 
-nav a:hover::before {
-    opacity: 1;
-    transform: scale(1);
-}
+            border-radius: 10px;
 
+            transition: 0.3s ease;
+        }
 
-/* HEADER BUTTON */
 
-.header-btn {
-    padding: 11px 18px;
+        .nav a:hover {
+            color: white;
 
-    border-radius: 10px;
+            background:
+                rgba(255,255,255,0.07);
 
-    border: 1px solid rgba(124,77,255,0.45);
+            box-shadow:
+                0 5px 25px rgba(0,0,0,0.25);
+        }
 
-    background: rgba(124,77,255,0.12);
 
-    color: white;
+        /* HOVER LINE */
 
-    font-size: 12px;
-    font-weight: 800;
+        .nav a::after {
+            content: "";
 
-    transition: 0.3s ease;
-}
+            position: absolute;
 
-.header-btn:hover {
-    background: var(--primary);
+            left: 50%;
+            bottom: 4px;
 
-    box-shadow:
-        0 0 25px rgba(124,77,255,0.3);
+            width: 0;
+            height: 2px;
 
-    transform: translateY(-2px);
-}
+            transform: translateX(-50%);
 
+            border-radius: 5px;
 
-/* =========================================================
-   HERO
-========================================================= */
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--purple),
+                    var(--blue)
+                );
 
-.hero {
-    min-height: 100vh;
+            transition: 0.3s ease;
+        }
 
-    padding-top: 170px;
-    padding-bottom: 80px;
+        .nav a:hover::after {
+            width: 22px;
+        }
 
-    position: relative;
 
-    display: flex;
-    align-items: center;
-}
+        /* HEADER CTA */
 
-.hero-grid {
-    display: grid;
+        .header-cta {
+            margin-left: auto;
 
-    grid-template-columns:
-        1fr 1fr;
+            display: flex;
+            align-items: center;
 
-    gap: 70px;
+            gap: 12px;
+        }
 
-    align-items: center;
-}
 
+        .hire-btn {
+            display: flex;
+            align-items: center;
+            gap: 9px;
 
-/* HERO LEFT */
+            padding: 12px 19px;
 
-.hero-left {
-    position: relative;
-    z-index: 2;
-}
+            border: 1px solid rgba(255,255,255,0.11);
 
-.availability {
-    display: inline-flex;
+            border-radius: 12px;
 
-    align-items: center;
-    gap: 9px;
+            color: white;
 
-    margin-bottom: 28px;
+            font-size: 10px;
+            font-weight: 900;
 
-    padding: 8px 13px;
+            transition: 0.3s ease;
+        }
 
-    border: 1px solid var(--border);
-    border-radius: 30px;
 
-    background: rgba(255,255,255,0.025);
+        .hire-btn span {
+            color: var(--blue);
 
-    color: #a8acb6;
+            font-size: 15px;
+        }
 
-    font-size: 11px;
-    font-weight: 800;
 
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
+        .hire-btn:hover {
+            border-color: var(--purple);
 
-.status-dot {
-    width: 7px;
-    height: 7px;
+            background:
+                rgba(128,85,255,0.1);
 
-    border-radius: 50%;
+            transform: translateY(-2px);
+        }
 
-    background: #42e695;
 
-    box-shadow:
-        0 0 14px rgba(66,230,149,0.8);
-}
+        /* =========================================================
+           HERO
+        ========================================================= */
 
+        .hero {
+            position: relative;
 
-.eyebrow {
-    margin-bottom: 18px;
+            min-height: 100vh;
 
-    color: var(--secondary);
+            display: flex;
+            align-items: center;
 
-    font-size: 12px;
-    font-weight: 800;
+            padding:
+                140px 6% 80px;
 
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
+            overflow: hidden;
+        }
 
 
-.hero h1 {
-    max-width: 700px;
+        /* BACKGROUND LIGHT */
 
-    font-size: clamp(54px, 6vw, 86px);
+        .hero::before {
+            content: "";
 
-    line-height: 0.94;
+            position: absolute;
 
-    letter-spacing: -5px;
+            width: 700px;
+            height: 700px;
 
-    font-weight: 900;
+            left: 38%;
+            top: 15%;
 
-    margin-bottom: 28px;
-}
+            border-radius: 50%;
 
-.hero h1 span {
-    display: block;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(128,85,255,0.13),
+                    transparent 65%
+                );
 
-    background: linear-gradient(
-        100deg,
-        #ffffff 15%,
-        #8f65ff 55%,
-        #55c7ff 90%
-    );
+            filter: blur(30px);
 
-    -webkit-background-clip: text;
-    background-clip: text;
+            pointer-events: none;
+        }
 
-    color: transparent;
-}
 
+        .hero-container {
+            position: relative;
 
-.hero-description {
-    max-width: 600px;
+            width: 100%;
+            max-width: 1450px;
 
-    color: #999eaa;
+            margin: auto;
 
-    font-size: 17px;
+            display: grid;
 
-    line-height: 1.75;
+            grid-template-columns:
+                minmax(420px, 0.9fr)
+                minmax(500px, 1.1fr);
 
-    margin-bottom: 35px;
-}
+            gap: 30px;
 
+            align-items: center;
+        }
 
-/* BUTTONS */
 
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 13px;
+        /* =========================================================
+           HERO LEFT
+        ========================================================= */
 
-    margin-bottom: 50px;
-}
+        .hero-left {
+            position: relative;
 
-.btn {
-    display: inline-flex;
+            z-index: 20;
+        }
 
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 
-    padding: 15px 21px;
+        .availability {
+            display: inline-flex;
 
-    border-radius: 12px;
+            align-items: center;
 
-    font-size: 12px;
-    font-weight: 900;
+            gap: 10px;
 
-    transition: 0.3s ease;
-}
+            margin-bottom: 28px;
 
-.btn-primary {
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        #5c8dff
-    );
+            color: #8e94a0;
 
-    color: white;
+            font-size: 10px;
 
-    box-shadow:
-        0 12px 35px rgba(124,77,255,0.25);
-}
+            font-weight: 900;
 
-.btn-primary:hover {
-    transform: translateY(-3px);
+            letter-spacing: 2px;
+        }
 
-    box-shadow:
-        0 18px 45px rgba(124,77,255,0.38);
-}
 
-.btn-outline {
-    border: 1px solid var(--border);
+        .availability-dot {
+            width: 8px;
+            height: 8px;
 
-    background: rgba(255,255,255,0.025);
+            border-radius: 50%;
 
-    color: #c6c9d1;
-}
+            background: var(--blue);
 
-.btn-outline:hover {
-    border-color: rgba(124,77,255,0.5);
+            box-shadow:
+                0 0 18px rgba(67,186,255,0.8);
+        }
 
-    color: white;
 
-    background: rgba(124,77,255,0.08);
+        .eyebrow {
+            margin-bottom: 18px;
 
-    transform: translateY(-3px);
-}
+            color: #777d8a;
 
+            font-size: 11px;
 
-/* STATS */
+            font-weight: 900;
 
-.hero-stats {
-    display: flex;
-    gap: 42px;
-}
+            letter-spacing: 4px;
+        }
 
-.stat strong {
-    display: block;
 
-    font-size: 26px;
-    font-weight: 900;
+        .hero-title {
+            max-width: 650px;
 
-    margin-bottom: 5px;
-}
+            font-size:
+                clamp(52px, 6vw, 88px);
 
-.stat span {
-    color: #737884;
+            line-height: 0.92;
 
-    font-size: 10px;
-    font-weight: 700;
+            letter-spacing: -5px;
 
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+            font-weight: 950;
 
+            color: var(--white);
+        }
 
-/* =========================================================
-   HERO VISUAL
-========================================================= */
 
-.hero-visual {
-    position: relative;
+        .hero-title .gradient {
+            display: block;
 
-    min-height: 510px;
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--purple-light),
+                    var(--blue)
+                );
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            -webkit-background-clip: text;
+            background-clip: text;
 
+            color: transparent;
+        }
 
-/* GLOW */
 
-.visual-glow {
-    position: absolute;
+        .hero-description {
+            max-width: 540px;
 
-    width: 410px;
-    height: 410px;
+            margin-top: 30px;
 
-    border-radius: 50%;
+            color: #858b97;
 
-    background: radial-gradient(
-        circle,
-        rgba(124,77,255,0.20),
-        rgba(77,184,255,0.05),
-        transparent 68%
-    );
+            font-size: 15px;
 
-    filter: blur(12px);
-}
+            line-height: 1.8;
+        }
 
 
-/* CODE CARD */
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
 
-.code-card {
-    position: relative;
+        .hero-buttons {
+            display: flex;
 
-    width: min(500px, 100%);
+            gap: 13px;
 
-    border: 1px solid rgba(255,255,255,0.1);
+            margin-top: 34px;
+        }
 
-    border-radius: 22px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(21,24,33,0.96),
-            rgba(10,11,16,0.96)
-        );
+        .primary-btn,
+        .secondary-btn {
 
-    box-shadow:
-        0 35px 80px rgba(0,0,0,0.4),
-        0 0 80px rgba(124,77,255,0.08);
+            display: inline-flex;
 
-    overflow: hidden;
+            align-items: center;
 
-    transform: perspective(1000px) rotateY(-5deg);
+            justify-content: center;
 
-    transition: 0.5s ease;
-}
+            gap: 12px;
 
-.code-card:hover {
-    transform:
-        perspective(1000px)
-        rotateY(0deg)
-        translateY(-8px);
-}
+            padding: 16px 22px;
 
+            border-radius: 13px;
 
-/* CARD TOP */
+            font-size: 10px;
 
-.browser-bar {
-    height: 48px;
+            font-weight: 900;
 
-    display: flex;
-    align-items: center;
+            transition: 0.35s ease;
+        }
 
-    padding: 0 17px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+        .primary-btn {
 
-    background: rgba(255,255,255,0.025);
-}
+            color: white;
 
-.browser-dots {
-    display: flex;
-    gap: 6px;
-}
+            background:
+                linear-gradient(
+                    110deg,
+                    #7950f7,
+                    #4e9eff
+                );
 
-.browser-dots i {
-    width: 8px;
-    height: 8px;
+            box-shadow:
+                0 12px 35px rgba(101,74,240,0.25);
+        }
 
-    border-radius: 50%;
 
-    background: #555b66;
-}
+        .primary-btn:hover {
 
-.browser-url {
-    margin-left: auto;
-    margin-right: auto;
+            transform: translateY(-4px);
 
-    padding: 7px 28px;
+            box-shadow:
+                0 18px 45px rgba(101,74,240,0.4);
+        }
 
-    border-radius: 8px;
 
-    background: rgba(255,255,255,0.035);
+        .secondary-btn {
 
-    color: #676d79;
+            color: #a1a6b0;
 
-    font-size: 9px;
-}
+            border:
+                1px solid rgba(255,255,255,0.11);
+        }
 
 
-/* CODE */
+        .secondary-btn:hover {
 
-.code-content {
-    padding: 28px;
-}
+            color: white;
 
-.code-line {
-    display: flex;
+            border-color:
+                rgba(128,85,255,0.6);
 
-    gap: 15px;
+            background:
+                rgba(128,85,255,0.07);
 
-    margin-bottom: 12px;
+            transform: translateY(-4px);
+        }
 
-    color: #7f8591;
 
-    font-family: monospace;
+        /* =========================================================
+           HERO STATS
+        ========================================================= */
 
-    font-size: 12px;
+        .hero-stats {
 
-    line-height: 1.7;
-}
+            display: flex;
 
-.line-number {
-    width: 18px;
+            gap: 48px;
 
-    color: #414652;
+            margin-top: 58px;
 
-    text-align: right;
-}
+            padding-top: 25px;
 
-.keyword {
-    color: #a879ff;
-}
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
 
-.blue {
-    color: #54c7ff;
-}
 
-.green {
-    color: #61d99b;
-}
+        .stat strong {
 
-.white {
-    color: #e8eaf0;
-}
+            display: block;
 
-.comment {
-    color: #555b67;
-}
+            font-size: 25px;
 
+            color: white;
+        }
 
-/* CARD BOTTOM */
 
-.code-footer {
-    margin: 0 25px 25px;
+        .stat span {
 
-    padding: 17px;
+            display: block;
 
-    border: 1px solid rgba(255,255,255,0.07);
+            margin-top: 6px;
 
-    border-radius: 13px;
+            color: #606671;
 
-    background: rgba(255,255,255,0.025);
+            font-size: 8px;
 
-    display: flex;
+            font-weight: 800;
 
-    justify-content: space-between;
-    align-items: center;
-}
+            letter-spacing: 1px;
+        }
 
-.performance span {
-    display: block;
 
-    color: #666c77;
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
 
-    font-size: 9px;
+        .hero-visual {
 
-    text-transform: uppercase;
-    letter-spacing: 1px;
+            position: relative;
 
-    margin-bottom: 5px;
-}
+            min-height: 590px;
 
-.performance strong {
-    font-size: 24px;
-}
+            display: flex;
 
-.performance strong em {
-    font-size: 10px;
+            align-items: center;
 
-    color: #61d99b;
+            justify-content: center;
 
-    font-style: normal;
-}
+            isolation: isolate;
+        }
 
-.live {
-    display: flex;
-    align-items: center;
-    gap: 7px;
 
-    color: #61d99b;
+        /* GLOW */
 
-    font-size: 9px;
-    font-weight: 800;
+        .visual-glow {
 
-    text-transform: uppercase;
-}
+            position: absolute;
 
+            width: 560px;
+            height: 560px;
 
-/* FLOATING CARDS */
+            border-radius: 50%;
 
-.float-card {
-    position: absolute;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(128,85,255,0.17),
+                    rgba(67,186,255,0.05) 38%,
+                    transparent 70%
+                );
 
-    padding: 14px 17px;
+            filter: blur(10px);
 
-    border: 1px solid rgba(255,255,255,0.09);
+            z-index: -5;
+        }
 
-    border-radius: 13px;
 
-    background: rgba(15,17,24,0.92);
+        /* =========================================================
+           ORBITS
+        ========================================================= */
 
-    backdrop-filter: blur(15px);
+        .orbit {
 
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.3);
-}
+            position: absolute;
 
-.float-card small {
-    display: block;
+            border-radius: 50%;
 
-    color: #656b76;
+            border:
+                1px solid rgba(128,85,255,0.12);
 
-    font-size: 8px;
+            pointer-events: none;
+        }
 
-    text-transform: uppercase;
 
-    letter-spacing: 1px;
+        .orbit-1 {
 
-    margin-bottom: 5px;
-}
+            width: 520px;
+            height: 520px;
 
-.float-card strong {
-    font-size: 13px;
-}
+            transform: rotate(20deg);
+        }
 
-.float-one {
-    top: 60px;
-    left: 0;
 
-    animation: floating 4s ease-in-out infinite;
-}
+        .orbit-2 {
 
-.float-two {
-    right: -5px;
-    bottom: 80px;
+            width: 410px;
+            height: 410px;
 
-    animation: floating 4s ease-in-out infinite 1.3s;
-}
+            border-color:
+                rgba(67,186,255,0.10);
 
-@keyframes floating {
-    0%,100% {
-        transform: translateY(0);
-    }
+            transform: rotate(-25deg);
+        }
 
-    50% {
-        transform: translateY(-10px);
-    }
-}
 
+        .orbit-3 {
 
-/* =========================================================
-   TRUST STRIP
-========================================================= */
+            width: 300px;
+            height: 300px;
 
-.trust-strip {
-    padding: 25px 0;
+            border-color:
+                rgba(164,124,255,0.08);
+        }
 
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
 
-    background: rgba(255,255,255,0.015);
-}
+        /* =========================================================
+           MAIN WEBSITE MOCKUP
+        ========================================================= */
 
-.trust-inner {
-    display: flex;
+        .website-mockup {
 
-    justify-content: space-between;
-    align-items: center;
+            position: relative;
 
-    gap: 20px;
-}
+            width: min(570px, 88%);
 
-.trust-inner span {
-    color: #555b66;
+            border-radius: 22px;
 
-    font-size: 10px;
-    font-weight: 800;
+            overflow: hidden;
 
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+            background: #0d0f16;
 
+            border:
+                1px solid rgba(255,255,255,0.12);
 
-/* =========================================================
-   SECTION HEAD
-========================================================= */
+            box-shadow:
+                0 45px 100px rgba(0,0,0,0.58),
+                0 0 80px rgba(128,85,255,0.10);
 
-.section-head {
-    margin-bottom: 55px;
-}
+            z-index: 5;
 
-.section-label {
-    color: var(--secondary);
+            transform:
+                perspective(1400px)
+                rotateY(-5deg)
+                rotateX(2deg);
 
-    font-size: 10px;
+            transition: 0.5s ease;
+        }
 
-    font-weight: 900;
 
-    letter-spacing: 3px;
+        .website-mockup:hover {
 
-    text-transform: uppercase;
+            transform:
+                perspective(1400px)
+                rotateY(0deg)
+                rotateX(0deg)
+                translateY(-8px);
 
-    margin-bottom: 14px;
-}
+            box-shadow:
+                0 55px 110px rgba(0,0,0,0.62),
+                0 0 100px rgba(128,85,255,0.17);
+        }
 
-.section-head h2 {
-    max-width: 650px;
 
-    font-size: clamp(38px, 5vw, 60px);
+        /* =========================================================
+           BROWSER BAR
+        ========================================================= */
 
-    line-height: 1;
+        .browser-header {
 
-    letter-spacing: -3px;
+            height: 48px;
 
-    margin-bottom: 18px;
-}
+            display: flex;
 
-.section-head p {
-    max-width: 620px;
+            align-items: center;
 
-    color: var(--muted);
+            padding: 0 15px;
 
-    font-size: 15px;
+            background:
+                rgba(255,255,255,0.025);
 
-    line-height: 1.7;
-}
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
 
 
-/* =========================================================
-   SERVICES
-========================================================= */
+        .browser-controls {
 
-.services-grid {
-    display: grid;
+            display: flex;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+            gap: 6px;
 
-    gap: 18px;
-}
+            width: 70px;
+        }
 
-.service-card {
-    padding: 30px;
 
-    min-height: 270px;
+        .browser-controls span {
 
-    border: 1px solid var(--border);
+            width: 8px;
+            height: 8px;
 
-    border-radius: 18px;
+            border-radius: 50%;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.035),
-            rgba(255,255,255,0.01)
-        );
+            background: #4d525d;
+        }
 
-    transition: 0.4s ease;
-}
 
-.service-card:hover {
-    transform: translateY(-7px);
+        .browser-address {
 
-    border-color:
-        rgba(124,77,255,0.4);
+            width: 230px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(124,77,255,0.08),
-            rgba(255,255,255,0.015)
-        );
+            margin: auto;
 
-    box-shadow:
-        0 25px 55px rgba(0,0,0,0.22);
-}
+            padding: 7px 18px;
 
-.service-number {
-    color: #555b67;
+            text-align: center;
 
-    font-size: 11px;
+            border-radius: 8px;
 
-    margin-bottom: 35px;
-}
+            color: #626874;
 
-.service-card h3 {
-    font-size: 21px;
+            font-size: 9px;
 
-    margin-bottom: 14px;
-}
+            background:
+                rgba(255,255,255,0.035);
+        }
 
-.service-card p {
-    color: #818691;
 
-    font-size: 13px;
+        .browser-menu {
 
-    line-height: 1.7;
-}
+            width: 30px;
 
+            text-align: right;
 
-/* =========================================================
-   PORTFOLIO
-========================================================= */
+            color: #666c78;
 
-.portfolio-grid {
-    display: grid;
+            font-size: 17px;
+        }
 
-    grid-template-columns:
-        1.2fr 0.8fr;
 
-    gap: 18px;
-}
+        /* =========================================================
+           WEBSITE SCREEN
+        ========================================================= */
 
-.project {
-    min-height: 360px;
+        .website-screen {
 
-    position: relative;
+            position: relative;
 
-    overflow: hidden;
+            min-height: 445px;
 
-    padding: 28px;
+            padding: 25px 28px;
 
-    border: 1px solid var(--border);
+            overflow: hidden;
 
-    border-radius: 20px;
+            background:
 
-    background: #101219;
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(128,85,255,0.15),
+                    transparent 35%
+                ),
 
-    transition: 0.4s ease;
-}
+                radial-gradient(
+                    circle at 15% 90%,
+                    rgba(67,186,255,0.07),
+                    transparent 35%
+                ),
 
-.project:hover {
-    transform: translateY(-6px);
+                #0b0d13;
+        }
 
-    border-color:
-        rgba(77,184,255,0.3);
-}
 
-.project-large {
-    min-height: 480px;
-}
+        /* MINI LOGO */
 
-.project-bg {
-    position: absolute;
+        .mini-logo {
 
-    inset: 0;
+            position: absolute;
 
-    background:
-        radial-gradient(
-            circle at 70% 30%,
-            rgba(124,77,255,0.2),
-            transparent 45%
-        );
-}
+            top: 25px;
+            left: 28px;
 
-.project-content {
-    position: absolute;
+            width: 37px;
+            height: 37px;
 
-    left: 28px;
-    right: 28px;
-    bottom: 28px;
+            display: flex;
 
-    z-index: 2;
-}
+            align-items: center;
+            justify-content: center;
 
-.project-tag {
-    display: inline-block;
+            border-radius: 10px;
 
-    padding: 7px 10px;
+            color: white;
 
-    border-radius: 7px;
+            font-size: 11px;
 
-    background: rgba(255,255,255,0.06);
+            font-weight: 950;
 
-    color: #9da2ad;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--blue)
+                );
 
-    font-size: 9px;
+            box-shadow:
+                0 0 25px rgba(128,85,255,0.3);
+        }
 
-    font-weight: 800;
 
-    text-transform: uppercase;
+        /* MINI NAV */
 
-    letter-spacing: 1px;
+        .mini-nav {
 
-    margin-bottom: 12px;
-}
+            position: absolute;
 
-.project h3 {
-    font-size: 28px;
+            top: 37px;
+            right: 27px;
 
-    margin-bottom: 8px;
-}
+            display: flex;
 
-.project p {
-    color: #858a95;
+            gap: 18px;
+        }
 
-    font-size: 12px;
-}
 
+        .mini-nav span {
 
-/* =========================================================
-   ABOUT
-========================================================= */
+            color: #555b67;
 
-.about-grid {
-    display: grid;
+            font-size: 7px;
 
-    grid-template-columns: 0.9fr 1.1fr;
+            font-weight: 900;
+        }
 
-    gap: 80px;
 
-    align-items: center;
-}
+        /* SCREEN CONTENT */
 
-.about-box {
-    padding: 35px;
+        .screen-content {
 
-    border: 1px solid var(--border);
+            position: relative;
 
-    border-radius: 20px;
+            z-index: 3;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(124,77,255,0.08),
-            rgba(255,255,255,0.02)
-        );
-}
+            padding-top: 125px;
+        }
 
-.about-mark {
-    width: 75px;
-    height: 75px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        .mini-label {
 
-    border-radius: 20px;
+            margin-bottom: 14px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            var(--secondary)
-        );
+            color: var(--blue);
 
-    font-size: 25px;
+            font-size: 8px;
 
-    font-weight: 900;
+            font-weight: 900;
 
-    margin-bottom: 35px;
-}
+            letter-spacing: 2px;
+        }
 
-.about-box h3 {
-    font-size: 27px;
 
-    margin-bottom: 13px;
-}
+        .screen-content h3 {
 
-.about-box p {
-    color: #858a95;
+            max-width: 420px;
 
-    line-height: 1.8;
+            font-size: 40px;
 
-    font-size: 14px;
-}
+            line-height: 1;
 
-.about-content h2 {
-    font-size: clamp(38px, 5vw, 58px);
+            letter-spacing: -2px;
 
-    line-height: 1;
+            color: white;
+        }
 
-    letter-spacing: -3px;
 
-    margin-bottom: 25px;
-}
+        .screen-content h3 span {
 
-.about-content p {
-    color: #858a95;
+            display: block;
 
-    line-height: 1.8;
+            background:
+                linear-gradient(
+                    100deg,
+                    var(--purple-light),
+                    var(--blue)
+                );
 
-    font-size: 15px;
+            -webkit-background-clip: text;
+            background-clip: text;
 
-    margin-bottom: 25px;
-}
+            color: transparent;
+        }
 
-.about-list {
-    display: grid;
 
-    gap: 13px;
-}
+        .screen-content p {
 
-.about-list div {
-    display: flex;
+            max-width: 350px;
 
-    align-items: center;
+            margin-top: 18px;
 
-    gap: 12px;
+            color: #707682;
 
-    color: #b0b4bd;
+            font-size: 11px;
 
-    font-size: 13px;
-}
+            line-height: 1.7;
+        }
 
-.check {
-    width: 20px;
-    height: 20px;
 
-    display: flex;
+        .mini-line {
 
-    align-items: center;
-    justify-content: center;
+            width: 80px;
+            height: 3px;
 
-    border-radius: 50%;
+            margin-top: 26px;
 
-    background: rgba(124,77,255,0.15);
+            border-radius: 10px;
 
-    color: #a879ff;
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--purple),
+                    var(--blue)
+                );
+        }
 
-    font-size: 10px;
-}
 
+        /* MINI INFO CARDS */
 
-/* =========================================================
-   CONTACT
-========================================================= */
+        .mini-cards {
 
-.contact {
-    padding-bottom: 130px;
-}
+            display: flex;
 
-.contact-box {
-    position: relative;
+            gap: 10px;
 
-    overflow: hidden;
+            margin-top: 42px;
+        }
 
-    padding: 70px;
 
-    border: 1px solid var(--border);
+        .mini-cards div {
 
-    border-radius: 25px;
+            width: 112px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(124,77,255,0.12),
-            rgba(77,184,255,0.04),
-            rgba(255,255,255,0.02)
-        );
+            padding: 13px;
 
-    text-align: center;
-}
+            border-radius: 10px;
 
-.contact-box::before {
-    content: "";
+            border:
+                1px solid rgba(255,255,255,0.07);
 
-    position: absolute;
+            background:
+                rgba(255,255,255,0.025);
+        }
 
-    width: 400px;
-    height: 400px;
 
-    left: 50%;
-    top: 50%;
+        .mini-cards small {
 
-    transform: translate(-50%,-50%);
+            display: block;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(124,77,255,0.13),
-            transparent 65%
-        );
+            margin-bottom: 5px;
 
-    pointer-events: none;
-}
+            color: #454a55;
 
-.contact-box > * {
-    position: relative;
-    z-index: 2;
-}
+            font-size: 7px;
+        }
 
-.contact-box h2 {
-    max-width: 700px;
 
-    margin: auto auto 20px;
+        .mini-cards strong {
 
-    font-size: clamp(40px, 6vw, 70px);
+            color: #8a909b;
 
-    line-height: 0.98;
+            font-size: 8px;
+        }
 
-    letter-spacing: -4px;
-}
 
-.contact-box p {
-    max-width: 550px;
+        /* SCREEN LIGHT */
 
-    margin: auto auto 30px;
+        .screen-glow {
 
-    color: #888d98;
+            position: absolute;
 
-    line-height: 1.7;
+            width: 280px;
+            height: 280px;
 
-    font-size: 14px;
-}
+            right: -130px;
+            bottom: -130px;
 
+            border-radius: 50%;
 
-/* =========================================================
-   FOOTER
-========================================================= */
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(128,85,255,0.18),
+                    transparent 68%
+                );
 
-footer {
-    border-top: 1px solid var(--border);
+            filter: blur(10px);
+        }
 
-    padding: 25px 0;
-}
 
-.footer-inner {
-    display: flex;
+        /* =========================================================
+           FLOATING BADGES
+        ========================================================= */
 
-    align-items: center;
+        .floating-badge {
 
-    justify-content: space-between;
-}
+            position: absolute;
 
-.footer-inner p {
-    color: #626773;
+            background:
+                rgba(14,16,23,0.95);
 
-    font-size: 11px;
-}
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-.footer-links {
-    display: flex;
+            border:
+                1px solid rgba(255,255,255,0.11);
 
-    gap: 20px;
-}
+            border-radius: 14px;
 
-.footer-links a {
-    color: #707581;
+            box-shadow:
+                0 25px 55px rgba(0,0,0,0.45);
 
-    font-size: 11px;
+            z-index: 20;
 
-    transition: 0.3s ease;
-}
+            transition: 0.35s ease;
+        }
 
-.footer-links a:hover {
-    color: white;
-}
 
+        .floating-badge:hover {
 
-/* =========================================================
-   MOBILE
-========================================================= */
+            transform:
+                translateY(-6px)
+                scale(1.03);
 
-@media (max-width: 900px) {
+            border-color:
+                rgba(128,85,255,0.4);
+        }
 
-    nav {
-        display: none;
-    }
 
-    header {
-        height: 65px;
-    }
+        .floating-badge small {
 
-    .hero {
-        padding-top: 130px;
-    }
+            display: block;
 
-    .hero-grid {
-        grid-template-columns: 1fr;
+            color: #555b67;
 
-        gap: 60px;
-    }
+            font-size: 7px;
 
-    .hero h1 {
-        letter-spacing: -3px;
-    }
+            font-weight: 800;
 
-    .hero-visual {
-        min-height: 430px;
-    }
+            letter-spacing: 1px;
 
-    .float-one {
-        left: -5px;
-    }
+            margin-bottom: 4px;
+        }
 
-    .float-two {
-        right: -5px;
-    }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+        .floating-badge strong {
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
+            display: block;
 
-    .about-grid {
-        grid-template-columns: 1fr;
+            color: #d4d7de;
 
-        gap: 45px;
-    }
+            font-size: 9px;
 
-    .trust-inner {
-        flex-wrap: wrap;
+            font-weight: 900;
+        }
 
-        justify-content: center;
-    }
 
-    .contact-box {
-        padding: 45px 25px;
-    }
-}
+        /* =========================================================
+           WORDPRESS BADGE
+        ========================================================= */
 
+        .wordpress-badge {
 
-@media (max-width: 600px) {
+            top: 65px;
+            left: 5px;
 
-    .container {
-        width: min(100% - 30px, 1180px);
-    }
+            display: flex;
 
-    .header-btn {
-        display: none;
-    }
+            align-items: center;
 
-    .hero {
-        padding-top: 120px;
-    }
+            gap: 11px;
 
-    .hero h1 {
-        font-size: 51px;
+            padding: 12px 15px;
+        }
 
-        letter-spacing: -3px;
-    }
 
-    .hero-description {
-        font-size: 15px;
-    }
+        .badge-icon {
 
-    .hero-buttons {
-        flex-direction: column;
+            width: 35px;
+            height: 35px;
 
-        align-items: stretch;
-    }
+            display: flex;
 
-    .btn {
-        width: 100%;
-    }
+            align-items: center;
+            justify-content: center;
 
-    .hero-stats {
-        gap: 22px;
-    }
+            border-radius: 50%;
 
-    .stat strong {
-        font-size: 22px;
-    }
+            border:
+                2px solid var(--blue);
 
-    .hero-visual {
-        min-height: 380px;
-    }
+            color: var(--blue);
 
-    .code-card {
-        transform: none;
-    }
+            font-size: 13px;
 
-    .code-content {
-        padding: 20px;
-    }
+            font-weight: 950;
 
-    .code-line {
-        font-size: 10px;
-        gap: 8px;
-    }
+            box-shadow:
+                0 0 20px rgba(67,186,255,0.2);
+        }
 
-    .float-card {
-        padding: 10px 12px;
-    }
 
-    .float-one {
-        top: 25px;
-    }
+        /* =========================================================
+           PERFORMANCE BADGE
+        ========================================================= */
 
-    .float-two {
-        bottom: 30px;
-    }
+        .performance-badge {
 
-    .section {
-        padding: 85px 0;
-    }
+            right: -10px;
+            bottom: 75px;
 
-    .section-head h2,
-    .about-content h2 {
-        letter-spacing: -2px;
-    }
+            width: 155px;
 
-    .footer-inner {
-        flex-direction: column;
+            padding: 15px;
+        }
 
-        gap: 15px;
-    }
-}
 
-</style>
+        .performance-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 9px;
+        }
+
+
+        .performance-top small {
+            margin: 0;
+        }
+
+
+        .performance-top strong {
+
+            color: white;
+
+            font-size: 24px;
+        }
+
+
+        .performance-bar {
+
+            width: 100%;
+            height: 4px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+        .performance-bar span {
+
+            display: block;
+
+            width: 98%;
+            height: 100%;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--purple),
+                    var(--blue)
+                );
+        }
+
+
+        .performance-badge em {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: var(--green);
+
+            font-size: 7px;
+
+            font-weight: 900;
+
+            font-style: normal;
+        }
+
+
+        /* =========================================================
+           LIVE BADGE
+        ========================================================= */
+
+        .live-badge {
+
+            top: 22px;
+            right: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 10px 13px;
+        }
+
+
+        .live-dot {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 13px rgba(85,216,154,0.9);
+        }
+
+
+        .live-badge strong {
+
+            color: var(--green);
+
+            font-size: 8px;
+        }
+
+
+        /* =========================================================
+           CODE TAG
+        ========================================================= */
+
+        .code-tag {
+
+            position: absolute;
+
+            left: 15px;
+            bottom: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 11px 14px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            background:
+                rgba(14,16,23,0.95);
+
+            backdrop-filter: blur(18px);
+
+            z-index: 22;
+        }
+
+
+        .code-tag > span {
+
+            color: var(--purple-light);
+
+            font-family: monospace;
+
+            font-size: 18px;
+
+            font-weight: 900;
+        }
+
+
+        .code-tag small {
+
+            display: block;
+
+            margin: 0;
+
+            color: #555b67;
+
+            font-size: 6px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .code-tag strong {
+
+            display: block;
+
+            margin-top: 2px;
+
+            color: #a8adb7;
+
+            font-size: 8px;
+        }
+
+
+        /* =========================================================
+           ABOUT SECTION
+        ========================================================= */
+
+        .section {
+
+            position: relative;
+
+            padding: 120px 6%;
+
+            border-top:
+                1px solid rgba(255,255,255,0.05);
+        }
+
+
+        .section-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .section-label {
+
+            color: var(--blue);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .section-title {
+
+            max-width: 750px;
+
+            font-size:
+                clamp(35px, 4vw, 58px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+        }
+
+
+        .section-text {
+
+            max-width: 700px;
+
+            margin-top: 25px;
+
+            color: #777d89;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 55px;
+        }
+
+
+        .service-card {
+
+            position: relative;
+
+            padding: 30px;
+
+            min-height: 230px;
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.018);
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
+        }
+
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -50px;
+            top: -50px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(128,85,255,0.15),
+                    transparent 70%
+                );
+        }
+
+
+        .service-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(128,85,255,0.25);
+
+            background:
+                rgba(128,85,255,0.035);
+        }
+
+
+        .service-number {
+
+            color: #454a55;
+
+            font-size: 10px;
+
+            font-weight: 900;
+        }
+
+
+        .service-card h3 {
+
+            margin-top: 50px;
+
+            font-size: 22px;
+        }
+
+
+        .service-card p {
+
+            margin-top: 12px;
+
+            color: #707682;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-box {
+
+            margin-top: 55px;
+
+            padding: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(128,85,255,0.07),
+                    rgba(67,186,255,0.03)
+                );
+        }
+
+
+        .contact-box h3 {
+
+            font-size: 30px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .contact-box p {
+
+            margin-top: 10px;
+
+            color: #777d89;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding: 30px 6%;
+
+            border-top:
+                1px solid rgba(255,255,255,0.05);
+
+            color: #565c67;
+
+            font-size: 9px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .hero-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero-left {
+
+                text-align: center;
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+
+            .hero-stats {
+
+                justify-content: center;
+            }
+
+
+            .hero-visual {
+
+                margin-top: 20px;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                height: 70px;
+
+                padding: 0 20px;
+            }
+
+
+            .nav {
+
+                display: none;
+            }
+
+
+            .hire-btn {
+
+                padding: 10px 13px;
+            }
+
+
+            .hero {
+
+                padding:
+                    110px 20px 60px;
+            }
+
+
+            .hero-container {
+
+                gap: 10px;
+            }
+
+
+            .hero-left {
+
+                text-align: left;
+            }
+
+
+            .availability {
+
+                margin-bottom: 20px;
+            }
+
+
+            .hero-title {
+
+                font-size: 54px;
+
+                letter-spacing: -3px;
+            }
+
+
+            .hero-description {
+
+                font-size: 13px;
+            }
+
+
+            .hero-buttons {
+
+                justify-content: flex-start;
+
+                flex-wrap: wrap;
+            }
+
+
+            .hero-stats {
+
+                justify-content: flex-start;
+
+                gap: 30px;
+
+                margin-top: 40px;
+            }
+
+
+            .hero-visual {
+
+                min-height: 440px;
+
+                margin-top: 25px;
+            }
+
+
+            .website-mockup {
+
+                width: 100%;
+
+                transform: none;
+            }
+
+
+            .website-screen {
+
+                min-height: 350px;
+
+                padding: 20px;
+            }
+
+
+            .screen-content {
+
+                padding-top: 90px;
+            }
+
+
+            .screen-content h3 {
+
+                font-size: 29px;
+
+                letter-spacing: -1px;
+            }
+
+
+            .mini-nav {
+
+                display: none;
+            }
+
+
+            .mini-cards {
+
+                margin-top: 28px;
+            }
+
+
+            .mini-cards div {
+
+                width: 85px;
+
+                padding: 9px;
+            }
+
+
+            .wordpress-badge {
+
+                left: -5px;
+                top: 25px;
+
+                transform: scale(0.82);
+            }
+
+
+            .live-badge {
+
+                right: -5px;
+                top: 20px;
+
+                transform: scale(0.82);
+            }
+
+
+            .performance-badge {
+
+                right: -5px;
+                bottom: 25px;
+
+                transform: scale(0.82);
+            }
+
+
+            .code-tag {
+
+                left: -5px;
+                bottom: 28px;
+
+                transform: scale(0.82);
+            }
+
+
+            .orbit-1 {
+
+                width: 360px;
+                height: 360px;
+            }
+
+
+            .orbit-2 {
+
+                width: 290px;
+                height: 290px;
+            }
+
+
+            .orbit-3 {
+
+                width: 220px;
+                height: 220px;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .section {
+
+                padding:
+                    80px 20px;
+            }
+
+
+            .contact-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 30px;
+            }
+        }
+
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
 
-<header>
+    <header>
 
-    <a href="#home" class="logo">
-
-        <div class="logo-box">
+        <a href="#home" class="logo">
             UA
-        </div>
-
-        <span>UA WordPress</span>
-
-    </a>
-
-
-    <nav>
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-
-    <a href="#contact" class="header-btn">
-        LET'S TALK ↗
-    </a>
-
-</header>
-
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero" id="home">
-
-<div class="container">
-
-<div class="hero-grid">
-
-
-<!-- LEFT -->
-
-<div class="hero-left">
-
-    <div class="availability">
-
-        <span class="status-dot"></span>
-
-        Available for Projects
-
-    </div>
-
-
-    <div class="eyebrow">
-        WordPress Design & Development
-    </div>
-
-
-    <h1>
-
-        BUILDING
-
-        <span>
-            DIGITAL
-        </span>
-
-        EXPERIENCES.
-
-    </h1>
-
-
-    <p class="hero-description">
-
-        I create modern WordPress websites that combine
-        strategic design, clean development, strong performance
-        and user-focused experiences — built to help businesses
-        look professional and grow online.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-        <a href="#portfolio" class="btn btn-primary">
-            VIEW MY WORK ↗
         </a>
 
-        <a href="#contact" class="btn btn-outline">
-            START A PROJECT +
-        </a>
 
-    </div>
+        <nav class="nav">
 
+            <a href="#home">HOME</a>
 
-    <div class="hero-stats">
+            <a href="#about">ABOUT</a>
 
-        <div class="stat">
+            <a href="#work">WORK</a>
 
-            <strong>50+</strong>
+            <a href="#services">SERVICES</a>
 
-            <span>
-                Projects
-            </span>
+            <a href="#contact">CONTACT</a>
 
-        </div>
+        </nav>
 
 
-        <div class="stat">
+        <div class="header-cta">
 
-            <strong>04+</strong>
-
-            <span>
-                Years Experience
-            </span>
+            <a href="#contact" class="hire-btn">
+                LET'S TALK
+                <span>↗</span>
+            </a>
 
         </div>
 
-
-        <div class="stat">
-
-            <strong>100%</strong>
-
-            <span>
-                Commitment
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
+    </header>
 
 
 
-<!-- RIGHT VISUAL -->
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
 
-<div class="hero-visual">
+    <main id="home">
 
-    <div class="visual-glow"></div>
+        <section class="hero">
 
-
-    <div class="float-card float-one">
-
-        <small>
-            Core Focus
-        </small>
-
-        <strong>
-            WordPress
-        </strong>
-
-    </div>
+            <div class="hero-container">
 
 
-    <div class="float-card float-two">
+                <!-- LEFT -->
 
-        <small>
-            Website Status
-        </small>
+                <div class="hero-left">
 
-        <strong>
-            Optimized ✓
-        </strong>
+                    <div class="availability">
 
-    </div>
+                        <span class="availability-dot"></span>
 
+                        AVAILABLE FOR PROJECTS
 
-    <div class="code-card">
+                    </div>
 
 
-        <div class="browser-bar">
+                    <div class="eyebrow">
 
-            <div class="browser-dots">
+                        WORDPRESS DESIGN & DEVELOPMENT
 
-                <i></i>
-                <i></i>
-                <i></i>
+                    </div>
+
+
+                    <h1 class="hero-title">
+
+                        BUILDING
+
+                        <span class="gradient">
+                            DIGITAL
+                        </span>
+
+                        EXPERIENCES.
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        I create modern WordPress websites that
+                        combine strategic design, clean development
+                        and powerful digital experiences.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#work" class="primary-btn">
+
+                            VIEW MY WORK
+
+                            <span>↗</span>
+
+                        </a>
+
+
+                        <a href="#contact" class="secondary-btn">
+
+                            START A PROJECT
+
+                            <span>+</span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+
+                            <strong>50+</strong>
+
+                            <span>PROJECTS</span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>04+</strong>
+
+                            <span>YEARS EXPERIENCE</span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>100%</strong>
+
+                            <span>COMMITMENT</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RIGHT VISUAL
+                ================================================= -->
+
+                <div class="hero-visual">
+
+
+                    <div class="visual-glow"></div>
+
+
+                    <div class="orbit orbit-1"></div>
+
+                    <div class="orbit orbit-2"></div>
+
+                    <div class="orbit orbit-3"></div>
+
+
+
+                    <!-- WORDPRESS BADGE -->
+
+                    <div class="floating-badge wordpress-badge">
+
+                        <div class="badge-icon">
+                            W
+                        </div>
+
+                        <div>
+
+                            <small>BUILDING WITH</small>
+
+                            <strong>WORDPRESS</strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LIVE BADGE -->
+
+                    <div class="floating-badge live-badge">
+
+                        <span class="live-dot"></span>
+
+                        <div>
+
+                            <small>STATUS</small>
+
+                            <strong>LIVE & OPTIMIZED</strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MAIN MOCKUP -->
+
+                    <div class="website-mockup">
+
+
+                        <div class="browser-header">
+
+                            <div class="browser-controls">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <div class="browser-address">
+
+                                yourbusiness.com
+
+                            </div>
+
+
+                            <div class="browser-menu">
+                                ⋮
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="website-screen">
+
+
+                            <div class="mini-logo">
+                                UA
+                            </div>
+
+
+                            <div class="mini-nav">
+
+                                <span>HOME</span>
+
+                                <span>ABOUT</span>
+
+                                <span>WORK</span>
+
+                                <span>CONTACT</span>
+
+                            </div>
+
+
+
+                            <div class="screen-content">
+
+
+                                <div class="mini-label">
+
+                                    WORDPRESS DEVELOPMENT
+
+                                </div>
+
+
+                                <h3>
+
+                                    Digital experiences
+
+                                    <span>
+                                        built to perform.
+                                    </span>
+
+                                </h3>
+
+
+                                <p>
+
+                                    Modern design. Clean development.
+                                    Better performance and a stronger
+                                    online presence.
+
+                                </p>
+
+
+                                <div class="mini-line"></div>
+
+
+                                <div class="mini-cards">
+
+
+                                    <div>
+
+                                        <small>01</small>
+
+                                        <strong>
+                                            UI / UX
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small>02</small>
+
+                                        <strong>
+                                            WORDPRESS
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <small>03</small>
+
+                                        <strong>
+                                            SEO
+                                        </strong>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="screen-glow"></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PERFORMANCE -->
+
+                    <div class="floating-badge performance-badge">
+
+
+                        <div class="performance-top">
+
+                            <small>
+                                PERFORMANCE
+                            </small>
+
+                            <strong>
+                                98
+                            </strong>
+
+                        </div>
+
+
+                        <div class="performance-bar">
+
+                            <span></span>
+
+                        </div>
+
+
+                        <em>
+                            Excellent
+                        </em>
+
+                    </div>
+
+
+
+                    <!-- CODE TAG -->
+
+                    <div class="code-tag">
+
+                        <span>
+                            &lt;/&gt;
+                        </span>
+
+                        <div>
+
+                            <small>
+                                BUILDING
+                            </small>
+
+                            <strong>
+                                YOUR WEBSITE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
-
-            <div class="browser-url">
-                yourbusiness.com
-            </div>
-
-        </div>
+        </section>
 
 
 
-        <div class="code-content">
+        <!-- =========================================================
+             ABOUT
+        ========================================================= -->
+
+        <section class="section" id="about">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    ABOUT THE WORK
+                </div>
 
 
-            <div class="code-line">
+                <h2 class="section-title">
 
-                <span class="line-number">01</span>
+                    I build websites
+                    designed to work,
+                    not just look good.
 
-                <span>
-                    <span class="keyword">&lt;section</span>
-                    <span class="blue"> class</span>=
-                    <span class="green">"website"</span>
-                    <span class="keyword">&gt;</span>
-                </span>
-
-            </div>
+                </h2>
 
 
-            <div class="code-line">
+                <p class="section-text">
 
-                <span class="line-number">02</span>
+                    From WordPress development and responsive
+                    design to performance and search optimization,
+                    every project is built around a clear purpose:
+                    creating a professional digital presence that
+                    helps a business grow.
 
-                <span>
-                    <span class="keyword">&lt;h1&gt;</span>
-                    <span class="white">
-                        Your Digital Presence
-                    </span>
-                    <span class="keyword">&lt;/h1&gt;</span>
-                </span>
+                </p>
 
             </div>
 
+        </section>
 
-            <div class="code-line">
 
-                <span class="line-number">03</span>
 
-                <span>
-                    <span class="keyword">&lt;p&gt;</span>
-                    <span class="white">
-                        Designed to convert.
-                    </span>
-                    <span class="keyword">&lt;/p&gt;</span>
-                </span>
+        <!-- =========================================================
+             SERVICES
+        ========================================================= -->
+
+        <section class="section" id="services">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    WHAT I DO
+                </div>
+
+
+                <h2 class="section-title">
+                    From idea to
+                    finished website.
+                </h2>
+
+
+                <div class="services-grid">
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <h3>
+                            WordPress
+                        </h3>
+
+                        <p>
+                            Custom WordPress websites built
+                            around your brand, goals and audience.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Web Design
+                        </h3>
+
+                        <p>
+                            Clean, modern and responsive interfaces
+                            designed to create a strong first impression.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Development
+                        </h3>
+
+                        <p>
+                            Reliable front-end development with
+                            attention to structure, usability and speed.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <h3>
+                            SEO
+                        </h3>
+
+                        <p>
+                            Search-friendly website structures designed
+                            to give your content a stronger foundation.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Fast-loading experiences focused on usability,
+                            responsiveness and technical quality.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card">
+
+                        <div class="service-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Website Support
+                        </h3>
+
+                        <p>
+                            Continuous improvements, updates and
+                            optimization to keep your website moving forward.
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
-
-            <div class="code-line">
-
-                <span class="line-number">04</span>
-
-                <span>
-                    <span class="comment">
-                        /* Fast. Clean. Responsive. */
-                    </span>
-                </span>
-
-            </div>
+        </section>
 
 
-            <div class="code-line">
 
-                <span class="line-number">05</span>
+        <!-- =========================================================
+             WORK
+        ========================================================= -->
 
-                <span>
-                    <span class="keyword">&lt;button</span>
-                    <span class="blue"> class</span>=
-                    <span class="green">"cta"</span>
-                    <span class="keyword">&gt;</span>
-                </span>
+        <section class="section" id="work">
 
-            </div>
+            <div class="section-container">
+
+                <div class="section-label">
+                    SELECTED WORK
+                </div>
 
 
-            <div class="code-line">
+                <h2 class="section-title">
+                    Projects that turn
+                    ideas into experiences.
+                </h2>
 
-                <span class="line-number">06</span>
 
-                <span>
-                    <span class="white">
-                        Start a Project
-                    </span>
+                <p class="section-text">
 
-                    <span class="keyword">
-                        &lt;/button&gt;
-                    </span>
-                </span>
+                    This section will showcase your real client
+                    projects, WordPress websites, redesigns and
+                    other selected work.
+
+                </p>
 
             </div>
 
+        </section>
 
-            <div class="code-line">
 
-                <span class="line-number">07</span>
 
-                <span>
-                    <span class="keyword">
-                        &lt;/section&gt;
-                    </span>
-                </span>
+        <!-- =========================================================
+             CONTACT
+        ========================================================= -->
+
+        <section class="section" id="contact">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    HAVE A PROJECT?
+                </div>
+
+
+                <h2 class="section-title">
+                    Let's build something
+                    worth remembering.
+                </h2>
+
+
+                <div class="contact-box">
+
+                    <div>
+
+                        <h3>
+                            Ready to start?
+                        </h3>
+
+                        <p>
+                            Tell me what you're working on
+                            and let's turn it into a strong website.
+                        </p>
+
+                    </div>
+
+
+                    <a href="mailto:hello@example.com"
+                        class="primary-btn">
+
+                        GET IN TOUCH
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
 
             </div>
 
+        </section>
 
-        </div>
+    </main>
 
 
 
-        <div class="code-footer">
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
 
+    <footer>
 
-            <div class="performance">
+        © 2026 UA — WordPress Design & Development
 
-                <span>
-                    Performance
-                </span>
-
-                <strong>
-                    98 <em>Excellent</em>
-                </strong>
-
-            </div>
-
-
-            <div class="live">
-
-                <span class="status-dot"></span>
-
-                Live Website
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     TRUST STRIP
-===================================================== -->
-
-<div class="trust-strip">
-
-<div class="container">
-
-<div class="trust-inner">
-
-    <span>
-        WordPress Websites
-    </span>
-
-    <span>
-        Modern UI / UX
-    </span>
-
-    <span>
-        Clean Development
-    </span>
-
-    <span>
-        Performance Focused
-    </span>
-
-    <span>
-        Business Ready
-    </span>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section class="section" id="services">
-
-<div class="container">
-
-
-<div class="section-head">
-
-    <div class="section-label">
-        What I Do
-    </div>
-
-    <h2>
-        Websites built with
-        purpose.
-    </h2>
-
-    <p>
-        From the first design idea to the final launch,
-        every part of the website is created with usability,
-        performance and business goals in mind.
-    </p>
-
-</div>
-
-
-
-<div class="services-grid">
-
-
-<div class="service-card">
-
-    <div class="service-number">
-        01 / 03
-    </div>
-
-    <h3>
-        WordPress Development
-    </h3>
-
-    <p>
-        Professional WordPress websites with clean structure,
-        responsive layouts and easy content management.
-    </p>
-
-</div>
-
-
-
-<div class="service-card">
-
-    <div class="service-number">
-        02 / 03
-    </div>
-
-    <h3>
-        Web Design
-    </h3>
-
-    <p>
-        Modern and conversion-focused interfaces designed
-        to create a strong first impression for your brand.
-    </p>
-
-</div>
-
-
-
-<div class="service-card">
-
-    <div class="service-number">
-        03 / 03
-    </div>
-
-    <h3>
-        Optimization & SEO
-    </h3>
-
-    <p>
-        Performance-focused websites with technical
-        improvements that create a faster and better
-        user experience.
-    </p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PORTFOLIO
-===================================================== -->
-
-<section class="section" id="portfolio">
-
-<div class="container">
-
-
-<div class="section-head">
-
-    <div class="section-label">
-        Selected Work
-    </div>
-
-    <h2>
-        Projects that speak
-        for themselves.
-    </h2>
-
-    <p>
-        A selection of digital experiences created with
-        clean design, practical functionality and strong
-        attention to detail.
-    </p>
-
-</div>
-
-
-
-<div class="portfolio-grid">
-
-
-<div class="project project-large">
-
-    <div class="project-bg"></div>
-
-    <div class="project-content">
-
-        <span class="project-tag">
-            WordPress / Business
-        </span>
-
-        <h3>
-            Modern Business Website
-        </h3>
-
-        <p>
-            Strategy • UI Design • WordPress Development
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<div class="project">
-
-    <div class="project-bg"></div>
-
-    <div class="project-content">
-
-        <span class="project-tag">
-            E-Commerce
-        </span>
-
-        <h3>
-            Online Store
-        </h3>
-
-        <p>
-            UX • WordPress • Conversion
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<div class="project">
-
-    <div class="project-bg"></div>
-
-    <div class="project-content">
-
-        <span class="project-tag">
-            Landing Page
-        </span>
-
-        <h3>
-            Product Landing Page
-        </h3>
-
-        <p>
-            Design • Development • Performance
-        </p>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="section" id="about">
-
-<div class="container">
-
-<div class="about-grid">
-
-
-<div class="about-box">
-
-    <div class="about-mark">
-        UA
-    </div>
-
-    <h3>
-        Digital experiences
-        made to work.
-    </h3>
-
-    <p>
-        I focus on creating websites that are not only
-        visually strong but also practical, responsive
-        and ready for real business use.
-    </p>
-
-</div>
-
-
-
-<div class="about-content">
-
-    <div class="section-label">
-        About Me
-    </div>
-
-    <h2>
-        Design with strategy.
-        Development with purpose.
-    </h2>
-
-    <p>
-        My approach is simple: understand the business,
-        understand the audience and then build a website
-        that communicates clearly.
-    </p>
-
-    <p>
-        Whether it's a business website, landing page,
-        online store or complete WordPress experience,
-        the goal is always to deliver something professional,
-        useful and easy to maintain.
-    </p>
-
-
-    <div class="about-list">
-
-        <div>
-            <span class="check">✓</span>
-            Responsive across devices
-        </div>
-
-        <div>
-            <span class="check">✓</span>
-            Clean and modern design
-        </div>
-
-        <div>
-            <span class="check">✓</span>
-            Performance focused
-        </div>
-
-        <div>
-            <span class="check">✓</span>
-            Built around business goals
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="contact section" id="contact">
-
-<div class="container">
-
-<div class="contact-box">
-
-    <div class="section-label">
-        Have a Project?
-    </div>
-
-    <h2>
-        Let's build something
-        valuable.
-    </h2>
-
-    <p>
-        Have a website idea or need a professional WordPress
-        website for your business? Let's discuss your project
-        and turn the idea into a strong digital experience.
-    </p>
-
-    <a href="mailto:your@email.com"
-       class="btn btn-primary">
-
-        START A CONVERSATION ↗
-
-    </a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-inner">
-
-    <p>
-        © 2026 UA WordPress. All rights reserved.
-    </p>
-
-
-    <div class="footer-links">
-
-        <a href="#home">
-            Home
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#portfolio">
-            Portfolio
-        </a>
-
-        <a href="#contact">
-            Contact
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-</footer>
-
+    </footer>
 
 
 </body>
+
 </html>
