@@ -1855,6 +1855,291 @@
             }
         }
 
+
+        /* =========================================================
+           PREMIUM ABOUT SECTION
+        ========================================================= */
+
+        .about-premium {
+            position: relative;
+            padding: 120px 6%;
+            background: #08090e;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .about-premium::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: -250px;
+            bottom: -250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128,85,255,0.10), transparent 68%);
+            pointer-events: none;
+        }
+
+        .about-premium-container {
+            position: relative;
+            max-width: 1450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.2fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .about-premium-left { position: relative; }
+
+        .about-premium-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .about-premium-label::before {
+            content: "";
+            width: 28px;
+            height: 1px;
+            background: var(--blue);
+            box-shadow: 0 0 12px rgba(67,186,255,0.5);
+        }
+
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .about-info-card {
+            position: relative;
+            min-height: 105px;
+            padding: 22px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.07);
+            background: linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+
+        .about-info-card::after {
+            content: "";
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            right: -45px;
+            top: -45px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128,85,255,0.14), transparent 70%);
+        }
+
+        .about-info-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(128,85,255,0.30);
+            background: linear-gradient(145deg, rgba(128,85,255,0.07), rgba(255,255,255,0.02));
+        }
+
+        .about-info-number {
+            color: var(--purple-light);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .about-info-card h3 {
+            margin-top: 17px;
+            color: #e9eaf0;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .about-info-card p {
+            margin-top: 6px;
+            color: #626874;
+            font-size: 9px;
+            line-height: 1.5;
+        }
+
+        .about-expertise {
+            margin-top: 28px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .about-expertise-title {
+            margin-bottom: 12px;
+            color: #646a76;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .about-expertise-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s ease;
+        }
+
+        .about-expertise-item:last-child { border-bottom: none; }
+        .about-expertise-item:hover { padding-left: 6px; }
+
+        .about-expertise-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-expertise-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            color: var(--blue);
+            background: rgba(67,186,255,0.06);
+            border: 1px solid rgba(67,186,255,0.12);
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        .about-expertise-item strong {
+            color: #858b97;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .about-expertise-arrow {
+            color: #454a55;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .about-expertise-item:hover .about-expertise-arrow {
+            color: var(--purple-light);
+            transform: translateX(4px);
+        }
+
+        .about-premium-right { position: relative; }
+
+        .about-index {
+            position: absolute;
+            right: 0;
+            top: -35px;
+            color: rgba(255,255,255,0.035);
+            font-size: 110px;
+            line-height: 1;
+            font-weight: 950;
+            pointer-events: none;
+        }
+
+        .about-big-title {
+            position: relative;
+            max-width: 780px;
+            color: var(--white);
+            font-size: clamp(42px, 5vw, 76px);
+            line-height: 0.96;
+            letter-spacing: -4px;
+            font-weight: 950;
+            z-index: 2;
+        }
+
+        .about-big-title .purple { color: var(--purple-light); }
+        .about-big-title .blue { color: var(--blue); }
+
+        .about-main-text {
+            max-width: 760px;
+            margin-top: 32px;
+            color: #7d838f;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .about-main-text strong { color: #b8bcc5; }
+
+        .about-sub-text {
+            max-width: 720px;
+            margin-top: 16px;
+            color: #606671;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .about-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .about-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 21px;
+            border-radius: 13px;
+            font-size: 9px;
+            font-weight: 900;
+            transition: 0.35s ease;
+        }
+
+        .about-action-primary {
+            color: white;
+            background: linear-gradient(110deg, #7950f7, #4e9eff);
+            box-shadow: 0 12px 30px rgba(101,74,240,0.20);
+        }
+
+        .about-action-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(101,74,240,0.35);
+        }
+
+        .about-action-secondary {
+            color: #9297a2;
+            border: 1px solid rgba(255,255,255,0.10);
+        }
+
+        .about-action-secondary:hover {
+            color: white;
+            border-color: rgba(67,186,255,0.40);
+            background: rgba(67,186,255,0.04);
+            transform: translateY(-4px);
+        }
+
+        .about-line {
+            position: absolute;
+            right: 0;
+            bottom: -45px;
+            width: 230px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(128,85,255,0.45));
+        }
+
+        @media (max-width: 1050px) {
+            .about-premium-container {
+                grid-template-columns: 1fr;
+                gap: 65px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .about-premium { padding: 85px 20px; }
+            .about-info-grid { grid-template-columns: 1fr; }
+            .about-big-title { font-size: 48px; letter-spacing: -3px; }
+            .about-index { font-size: 70px; }
+            .about-actions { flex-wrap: wrap; }
+            .about-line { display: none; }
+        }
+
     </style>
 </head>
 
@@ -2265,37 +2550,142 @@
 
 
 
+
         <!-- =========================================================
-             ABOUT
+             PREMIUM ABOUT / WORDPRESS EXPERTISE
         ========================================================= -->
 
-        <section class="section" id="about">
+        <section class="about-premium" id="about">
 
-            <div class="section-container">
+            <div class="about-premium-container">
 
-                <div class="section-label">
-                    ABOUT THE WORK
+                <div class="about-premium-left">
+
+                    <div class="about-premium-label">
+                        ABOUT MYSELF
+                    </div>
+
+                    <div class="about-info-grid">
+
+                        <div class="about-info-card">
+                            <div class="about-info-number">01</div>
+                            <h3>WORDPRESS</h3>
+                            <p>Custom websites built around your business.</p>
+                        </div>
+
+                        <div class="about-info-card">
+                            <div class="about-info-number">02</div>
+                            <h3>RESPONSIVE</h3>
+                            <p>Experiences that work beautifully on every screen.</p>
+                        </div>
+
+                        <div class="about-info-card">
+                            <div class="about-info-number">03</div>
+                            <h3>PERFORMANCE</h3>
+                            <p>Fast, optimized and smooth digital experiences.</p>
+                        </div>
+
+                        <div class="about-info-card">
+                            <div class="about-info-number">04</div>
+                            <h3>SEO READY</h3>
+                            <p>Clean structures built with search in mind.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="about-expertise">
+
+                        <div class="about-expertise-title">
+                            WORDPRESS EXPERTISE
+                        </div>
+
+                        <div class="about-expertise-item">
+                            <div class="about-expertise-left">
+                                <div class="about-expertise-icon">W</div>
+                                <strong>WordPress Development</strong>
+                            </div>
+                            <span class="about-expertise-arrow">↗</span>
+                        </div>
+
+                        <div class="about-expertise-item">
+                            <div class="about-expertise-left">
+                                <div class="about-expertise-icon">UI</div>
+                                <strong>Modern Web Design</strong>
+                            </div>
+                            <span class="about-expertise-arrow">↗</span>
+                        </div>
+
+                        <div class="about-expertise-item">
+                            <div class="about-expertise-left">
+                                <div class="about-expertise-icon">⚡</div>
+                                <strong>Speed Optimization</strong>
+                            </div>
+                            <span class="about-expertise-arrow">↗</span>
+                        </div>
+
+                        <div class="about-expertise-item">
+                            <div class="about-expertise-left">
+                                <div class="about-expertise-icon">SEO</div>
+                                <strong>SEO-Friendly Development</strong>
+                            </div>
+                            <span class="about-expertise-arrow">↗</span>
+                        </div>
+
+                        <div class="about-expertise-item">
+                            <div class="about-expertise-left">
+                                <div class="about-expertise-icon">WC</div>
+                                <strong>WooCommerce</strong>
+                            </div>
+                            <span class="about-expertise-arrow">↗</span>
+                        </div>
+
+                    </div>
+
                 </div>
 
+                <div class="about-premium-right">
 
-                <h2 class="section-title">
+                    <div class="about-index">01</div>
 
-                    I build websites
-                    designed to work,
-                    not just look good.
+                    <h2 class="about-big-title">
+                        A PROFESSIONAL
+                        <span class="purple">APPROACH</span>
+                        TO BUILDING
+                        <span class="blue">WORDPRESS</span>
+                        WEBSITES.
+                    </h2>
 
-                </h2>
+                    <p class="about-main-text">
+                        I create modern WordPress websites that combine
+                        <strong>clean design, reliable development and
+                        strong performance.</strong>
+                        Every project is built with a clear purpose —
+                        helping businesses create a professional online presence
+                        that works for their visitors.
+                    </p>
 
+                    <p class="about-sub-text">
+                        From responsive layouts and custom WordPress development
+                        to speed optimization and SEO-friendly structures,
+                        I focus on building websites that look professional,
+                        feel intuitive and perform smoothly.
+                    </p>
 
-                <p class="section-text">
+                    <div class="about-actions">
+                        <a href="#work" class="about-action about-action-primary">
+                            VIEW MY WORK
+                            <span>↗</span>
+                        </a>
 
-                    From WordPress development and responsive
-                    design to performance and search optimization,
-                    every project is built around a clear purpose:
-                    creating a professional digital presence that
-                    helps a business grow.
+                        <a href="#contact" class="about-action about-action-secondary">
+                            LET'S WORK TOGETHER
+                            <span>↗</span>
+                        </a>
+                    </div>
 
-                </p>
+                    <div class="about-line"></div>
+
+                </div>
 
             </div>
 
