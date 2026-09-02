@@ -319,10 +319,10 @@
             display: grid;
 
             grid-template-columns:
-                minmax(420px, 0.9fr)
-                minmax(500px, 1.1fr);
+                minmax(0, 1fr)
+                minmax(0, 1fr);
 
-            gap: 30px;
+            gap: 50px;
 
             align-items: center;
         }
@@ -336,6 +336,7 @@
             position: relative;
 
             z-index: 20;
+            min-width: 0;
         }
 
 
@@ -385,10 +386,11 @@
 
 
         .hero-title {
-            max-width: 650px;
+            max-width: 100%;
+            width: 100%;
 
             font-size:
-                clamp(52px, 6vw, 88px);
+                clamp(48px, 5vw, 82px);
 
             line-height: 0.92;
 
@@ -2676,8 +2678,8 @@
         .experience-project {
             position: absolute;
             z-index: 8;
-            width: 92px;
-            height: 92px;
+            width: 96px;
+            height: 96px;
             padding: 0;
             border: 0;
             background: transparent;
@@ -2714,8 +2716,8 @@
 
         .project-thumb {
             position: relative;
-            width: 92px;
-            height: 92px;
+            width: 96px;
+            height: 96px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2736,21 +2738,25 @@
         }
 
         .project-thumb img {
-            position: relative;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             z-index: 2;
-            width: 64px;
-            height: 64px;
-            max-width: 72%;
-            max-height: 72%;
+            width: 58px;
+            height: 58px;
+            max-width: 64%;
+            max-height: 64%;
             object-fit: contain;
             object-position: center;
             border-radius: 0;
+            image-rendering: auto;
             transition: transform .35s ease, opacity .25s ease;
         }
 
         .experience-project:hover .project-thumb img,
         .experience-project.active .project-thumb img {
-            transform: scale(1.06);
+            transform: translate(-50%, -50%) scale(1.06);
         }
 
         .project-hover-link {
@@ -2794,13 +2800,9 @@
             border-color: rgba(67,186,255,0.5);
         }
 
-        .project-fallback {
-            position: relative;
-            z-index: 2;
-            color: var(--blue);
-            font-size: 10px;
-            font-weight: 950;
-            letter-spacing: 1px;
+        .project-fallback,
+        .center-fallback {
+            display: none !important;
         }
 
         .project-meta {
@@ -2980,9 +2982,9 @@
             .experience-orbit { width: 480px; height: 420px; top: 110px; }
             .experience-center { width: 92%; min-height: 405px; padding: 26px 22px 35px; }
             .experience-details { grid-template-columns: 1fr; gap: 14px; }
-            .experience-project { width: 68px; height: 68px; }
-            .project-thumb { width: 68px; height: 68px; }
-            .project-thumb img { width: 48px; height: 48px; }
+            .experience-project { width: 72px; height: 72px; }
+            .project-thumb { width: 72px; height: 72px; }
+            .project-thumb img { width: 46px; height: 46px; max-width: 64%; max-height: 64%; }
             .project-hover-link { bottom: 5px; font-size: 6px; padding: 6px 8px; }
             .project-meta { top: 88px; font-size: 6px; }
             .project-1 { left: 24%; top: 86px; }
