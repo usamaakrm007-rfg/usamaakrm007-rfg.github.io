@@ -2884,6 +2884,30 @@
             z-index: 10;
         }
 
+        .experience-live-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            color: var(--blue);
+            font-size: 8px;
+            font-weight: 900;
+            letter-spacing: 1.8px;
+            text-decoration: none;
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .experience-live-link span {
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .experience-live-link:hover {
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
+
         .experience-hint::after {
             content: "↗";
             color: var(--blue);
@@ -3489,113 +3513,133 @@
                 </h2>
 
                 <p class="experience-intro">
-                    A selection of WordPress projects built with clean design,
-                    responsive development, strong performance and business-focused structure.
+                    A selection of real WordPress projects built across e-commerce,
+                    restaurant, service and business-focused digital experiences.
                 </p>
 
                 <div class="experience-timeline">
 
                     <div class="experience-orbit"></div>
 
-                    <!-- Replace these image paths with your real project logos -->
+                    <!-- 01 — Essex Vape House -->
                     <button class="experience-project project-1 active" type="button"
-                        data-name="Business Website" data-date="2026 • WORDPRESS"
-                        data-role="WORDPRESS DEVELOPMENT"
-                        data-description="A professional WordPress business website built around clear structure, responsive design and a strong user journey.">
+                        data-name="Essex Vape House"
+                        data-date="LIVE PROJECT • WORDPRESS"
+                        data-role="E-COMMERCE DEVELOPMENT"
+                        data-url="https://essexvapehouse.co.uk/"
+                        data-description="A modern e-commerce WordPress website with product-focused presentation, clear navigation and a polished shopping experience.">
                         <div class="project-thumb">
-                            <img src="images/project-01-logo.png" alt="Project 01 logo"
+                            <img src="https://www.google.com/s2/favicons?domain=essexvapehouse.co.uk&sz=128" alt="Essex Vape House logo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">01</span>
+                            <span class="project-fallback">EVH</span>
                         </div>
-                        <span class="project-meta">PROJECT 01</span>
+                        <span class="project-meta">01 / ESSEX VAPE HOUSE</span>
                     </button>
 
+                    <!-- 02 — Meem Moon -->
                     <button class="experience-project project-2" type="button"
-                        data-name="Service Website" data-date="2026 • WORDPRESS"
-                        data-role="DESIGN + DEVELOPMENT"
-                        data-description="A service-focused website designed to present information clearly and guide visitors toward action.">
+                        data-name="Meem Moon"
+                        data-date="LIVE PROJECT • WORDPRESS"
+                        data-role="E-COMMERCE DEVELOPMENT"
+                        data-url="http://meemmoon.com/"
+                        data-description="A product-led e-commerce experience for a honey and fresh ghee brand, built to present products clearly and make browsing simple.">
                         <div class="project-thumb">
-                            <img src="images/project-02-logo.png" alt="Project 02 logo"
+                            <img src="https://www.google.com/s2/favicons?domain=meemmoon.com&sz=128" alt="Meem Moon logo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">02</span>
+                            <span class="project-fallback">MM</span>
                         </div>
-                        <span class="project-meta">PROJECT 02</span>
+                        <span class="project-meta">02 / MEEM MOON</span>
                     </button>
 
+                    <!-- 03 — Rimini PK -->
                     <button class="experience-project project-3" type="button"
-                        data-name="Agency Website" data-date="2026 • WORDPRESS"
-                        data-role="WORDPRESS DESIGN"
-                        data-description="A polished WordPress experience focused on visual hierarchy, brand presentation and responsive layouts.">
-                        <div class="project-thumb">
-                            <img src="images/project-03-logo.png" alt="Project 03 logo"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">03</span>
-                        </div>
-                        <span class="project-meta">PROJECT 03</span>
-                    </button>
-
-                    <button class="experience-project project-4" type="button"
-                        data-name="E-Commerce Website" data-date="2026 • WORDPRESS"
+                        data-name="Rimini PK"
+                        data-date="LIVE PROJECT • WORDPRESS"
                         data-role="WOOCOMMERCE DEVELOPMENT"
-                        data-description="A conversion-focused storefront built around product presentation, usability and a smoother shopping experience.">
+                        data-url="https://riminipk.com/"
+                        data-description="A dessert and ice-cream e-commerce website with product variants, product presentation and a smooth cart-focused shopping journey.">
                         <div class="project-thumb">
-                            <img src="images/project-04-logo.png" alt="Project 04 logo"
+                            <img src="https://www.google.com/s2/favicons?domain=riminipk.com&sz=128" alt="Rimini PK logo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">04</span>
+                            <span class="project-fallback">RP</span>
                         </div>
-                        <span class="project-meta">PROJECT 04</span>
+                        <span class="project-meta">03 / RIMINI PK</span>
                     </button>
 
+                    <!-- 04 — TimsMenu -->
+                    <button class="experience-project project-4" type="button"
+                        data-name="TimsMenu"
+                        data-date="LIVE PROJECT • WORDPRESS"
+                        data-role="CONTENT + UX DEVELOPMENT"
+                        data-url="https://timsmenu.ca/"
+                        data-description="A menu-focused WordPress experience organised around categories, search, nutrition information and easy content discovery.">
+                        <div class="project-thumb">
+                            <img src="https://www.google.com/s2/favicons?domain=timsmenu.ca&sz=128" alt="TimsMenu logo"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="project-fallback">TM</span>
+                        </div>
+                        <span class="project-meta">04 / TIMSMENU</span>
+                    </button>
+
+                    <!-- 05 — The Oven X -->
                     <button class="experience-project project-5" type="button"
-                        data-name="Landing Page" data-date="2026 • WORDPRESS"
-                        data-role="LANDING PAGE DEVELOPMENT"
-                        data-description="A focused landing page created around strong messaging, clean hierarchy and a direct call to action.">
+                        data-name="The Oven X"
+                        data-date="LIVE PROJECT • WORDPRESS"
+                        data-role="RESTAURANT WEB DEVELOPMENT"
+                        data-url="https://theovenx.com/"
+                        data-description="A restaurant website combining menu presentation, deals, online ordering, branches and customer-focused service information.">
                         <div class="project-thumb">
-                            <img src="images/project-05-logo.png" alt="Project 05 logo"
+                            <img src="https://www.google.com/s2/favicons?domain=theovenx.com&sz=128" alt="The Oven X logo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">05</span>
+                            <span class="project-fallback">OX</span>
                         </div>
-                        <span class="project-meta">PROJECT 05</span>
+                        <span class="project-meta">05 / THE OVEN X</span>
                     </button>
 
+                    <!-- 06 — UAE Hiring -->
                     <button class="experience-project project-6" type="button"
-                        data-name="Business Portfolio" data-date="2026 • WORDPRESS"
-                        data-role="WORDPRESS DEVELOPMENT"
-                        data-description="A modern portfolio-style WordPress project combining professional presentation, responsive structure and clean navigation.">
+                        data-name="UAE Hiring"
+                        data-date="LIVE PROJECT • WORDPRESS"
+                        data-role="JOB PLATFORM DEVELOPMENT"
+                        data-url="https://uaehiring.ae/"
+                        data-description="A recruitment-focused WordPress platform designed to make job discovery, employer presentation and navigation easier for users.">
                         <div class="project-thumb">
-                            <img src="images/project-06-logo.png" alt="Project 06 logo"
+                            <img src="https://www.google.com/s2/favicons?domain=uaehiring.ae&sz=128" alt="UAE Hiring logo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                            <span class="project-fallback">06</span>
+                            <span class="project-fallback">UH</span>
                         </div>
-                        <span class="project-meta">PROJECT 06</span>
+                        <span class="project-meta">06 / UAE HIRING</span>
                     </button>
 
                     <!-- Selected project information -->
                     <div class="experience-center">
                         <div class="experience-center-icon">
-                            <img id="experienceCenterLogo" src="images/project-01-logo.png" alt="Selected project logo"
+                            <img id="experienceCenterLogo" src="https://www.google.com/s2/favicons?domain=essexvapehouse.co.uk&sz=128" alt="Essex Vape House logo"
                                  onerror="this.style.display='none'; document.getElementById('centerFallback').style.display='block';">
-                            <span id="centerFallback" class="center-fallback" style="display:none;">WP</span>
+                            <span id="centerFallback" class="center-fallback" style="display:none;">EVH</span>
                         </div>
 
                         <div class="experience-center-kicker">SELECTED WORDPRESS PROJECT</div>
-                        <h3 id="experienceName">Business Website</h3>
-                        <div class="experience-period" id="experienceDate">2026 • WORDPRESS</div>
+                        <h3 id="experienceName">Essex Vape House</h3>
+                        <div class="experience-period" id="experienceDate">LIVE PROJECT • WORDPRESS</div>
 
                         <div class="experience-divider"></div>
 
                         <div class="experience-details">
                             <div class="experience-role" id="experienceRole">
-                                WORDPRESS<br>DEVELOPMENT
+                                E-COMMERCE<br>DEVELOPMENT
                             </div>
                             <div class="experience-description">
                                 <p id="experienceDescription">
-                                    A professional WordPress business website built around clear structure,
-                                    responsive design and a strong user journey.
+                                    A modern e-commerce WordPress website with product-focused presentation,
+                                    clear navigation and a polished shopping experience.
                                 </p>
                                 <p>
-                                    Clean layouts • Responsive experience • Performance-focused structure
+                                    Real project • Responsive experience • Performance-focused structure
                                 </p>
+                                <a id="experienceLiveLink" class="experience-live-link" href="https://essexvapehouse.co.uk/" target="_blank" rel="noopener noreferrer">
+                                    VIEW LIVE SITE <span>↗</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -3604,6 +3648,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- =========================================================
              PREMIUM SERVICES
@@ -3772,6 +3817,41 @@
             </div>
 
         </section>
+
+
+        <!-- =========================================================
+             WORK
+        ========================================================= -->
+
+        <section class="section" id="work">
+
+            <div class="section-container">
+
+                <div class="section-label">
+                    SELECTED WORK
+                </div>
+
+
+                <h2 class="section-title">
+                    Projects that turn
+                    ideas into experiences.
+                </h2>
+
+
+                <p class="section-text">
+
+                    This section will showcase your real client
+                    projects, WordPress websites, redesigns and
+                    other selected work.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
         <!-- =========================================================
              CONTACT
         ========================================================= -->
@@ -3839,6 +3919,7 @@
             const description = document.getElementById('experienceDescription');
             const centerLogo = document.getElementById('experienceCenterLogo');
             const fallback = document.getElementById('centerFallback');
+            const liveLink = document.getElementById('experienceLiveLink');
 
             function selectProject(project) {
                 projects.forEach(item => item.classList.remove('active'));
@@ -3856,7 +3937,12 @@
                     fallback.style.display = 'none';
                 } else {
                     centerLogo.style.display = 'none';
+                    fallback.textContent = project.dataset.name.slice(0, 3).toUpperCase();
                     fallback.style.display = 'block';
+                }
+
+                if (liveLink && project.dataset.url) {
+                    liveLink.href = project.dataset.url;
                 }
             }
 
